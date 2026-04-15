@@ -1,7 +1,7 @@
 /* ============================================================
    ISOKO LIFE CENTER — components.js
-   Loads shared header.html and footer.html into every page.
-   Sets the active nav link based on current filename.
+   Loads header.html and footer.html into every page.
+   Language buttons are wired HERE, after the header is injected.
    ============================================================ */
 
 async function loadComponent(selector, file) {
@@ -20,17 +20,33 @@ async function initComponents() {
   await loadComponent('#site-header', 'header.html');
   await loadComponent('#site-footer', 'footer.html');
 
-  // Set active nav link based on current page filename
+  /* ── Active nav link ── */
   const page = location.pathname.split('/').pop() || 'index.html';
   const key  = page.replace('.html', '') || 'index';
   const link = document.querySelector(`.nav-links a[data-page="${key}"]`);
   if (link) link.classList.add('nav-active');
 
-  // Set footer year
+  /* ── Footer year ── */
   const yr = document.getElementById('currentYear');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // Re-init mobile menu (inserted by header load)
+  /* ── Language buttons ── wired AFTER header is in the DOM ── */
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      if (lang && typeof translations !== 'undefined' && translations[lang]) {
+        translatePage(lang);
+      }
+    });
+  });
+
+  /* Apply saved language to newly injected header elements */
+  const savedLang = localStorage.getItem('isoko_lang') || 'en';
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === savedLang);
+  });
+
+  /* ── Mobile menu ── wired AFTER header is in the DOM ── */
   const toggle   = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
   if (toggle && navLinks) {
@@ -42,7 +58,7 @@ async function initComponents() {
     });
   }
 
-  // Re-init navbar scroll shadow
+  /* ── Navbar scroll shadow ── */
   const navbar = document.querySelector('.navbar');
   if (navbar) {
     window.addEventListener('scroll', () => {
@@ -50,35 +66,26 @@ async function initComponents() {
     }, { passive: true });
   }
 
-  // Re-init language buttons (inserted by header load)
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
-      if (lang && typeof translations !== 'undefined' && translations[lang]) {
-        translatePage(lang);
-      }
-    });
+  /* ── Newsletter in footer ── */
+  document.querySelector('.newsletter-input-wrap')?.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = e.target.querySelector('input[type="email"]').value;
+    if (email) {
+      showNotification(`Thank you for subscribing with ${email}!`, 'success');
+      e.target.reset();
+    }
   });
 
-  // Re-init newsletter in footer
-  const newsletter = document.querySelector('.newsletter-input-wrap');
-  if (newsletter) {
-    newsletter.addEventListener('submit', e => {
-      e.preventDefault();
-      const email = newsletter.querySelector('input[type="email"]').value;
-      if (email) {
-        showNotification(`Thank you for subscribing with ${email}!`, 'success');
-        newsletter.reset();
-      }
-    });
-  }
-
-  // Re-init nav login/register buttons
+  /* ── Login / Register buttons ── */
   document.querySelector('.btn-nav-login')?.addEventListener('click', () => {
-    showNotification('Login page coming soon.', 'info');
+    const m = { en: 'Login page coming soon.', fr: 'Page de connexion bientôt disponible.', rw: 'Urupapuro rwo kwinjira ruzaza vuba.' };
+    const lang = localStorage.getItem('isoko_lang') || 'en';
+    showNotification(m[lang] || m.en, 'info');
   });
   document.querySelector('.btn-nav-register')?.addEventListener('click', () => {
-    showNotification('Registration page coming soon.', 'info');
+    const m = { en: 'Registration page coming soon.', fr: "Page d'inscription bientôt disponible.", rw: 'Urupapuro rwo kwiyandikisha ruzaza vuba.' };
+    const lang = localStorage.getItem('isoko_lang') || 'en';
+    showNotification(m[lang] || m.en, 'info');
   });
 }
 
