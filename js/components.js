@@ -1,7 +1,5 @@
 /* ============================================================
    ISOKO LIFE CENTER — components.js
-   Inlines header + footer, wires all interactions,
-   then calls translatePage() so ALL elements get translated.
    ============================================================ */
 
 const HEADER_HTML = `
@@ -28,11 +26,7 @@ const HEADER_HTML = `
       <li><a href="contact.html"      data-page="contact">Contact</a></li>
       <li><a href="partner.html"      data-page="partner">Partner With Us</a></li>
     </ul>
-    <div class="nav-actions">
-      <button class="btn-nav-login">Login</button>
-      <button class="btn-nav-register">Register</button>
-      <button class="menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
-    </div>
+    <button class="menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
   </div>
 </nav>`;
 
@@ -98,7 +92,6 @@ const FOOTER_HTML = `
 </a>`;
 
 function initComponents() {
-  /* ── Inject header and footer ── */
   const headerEl = document.getElementById('site-header');
   const footerEl = document.getElementById('site-footer');
   if (headerEl) headerEl.innerHTML = HEADER_HTML;
@@ -143,17 +136,7 @@ function initComponents() {
     }, { passive: true });
   }
 
-  /* ── Login / Register ── */
-  document.querySelector('.btn-nav-login')?.addEventListener('click', () => {
-    const m = { en: 'Login page coming soon.', fr: 'Page de connexion bientôt disponible.', rw: 'Urupapuro rwo kwinjira ruzaza vuba.' };
-    showNotification(m[currentLang] || m.en, 'info');
-  });
-  document.querySelector('.btn-nav-register')?.addEventListener('click', () => {
-    const m = { en: 'Registration page coming soon.', fr: "Page d'inscription bientôt disponible.", rw: 'Urupapuro rwo kwiyandikisha ruzaza vuba.' };
-    showNotification(m[currentLang] || m.en, 'info');
-  });
-
-  /* ── Apply saved language to EVERYTHING now that DOM is ready ── */
+  /* ── Apply saved language ── */
   const savedLang = localStorage.getItem('isoko_lang') || 'en';
   translatePage(savedLang, false);
 }
