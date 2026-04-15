@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consultation | Isoko Life Center</title>
+  <meta name="description" content="Book a consultation with certified health professionals at Isoko Life Center." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <style>
+    .page-hero { background: linear-gradient(135deg, var(--green-wash) 0%, var(--cream) 100%); padding: 60px 0 48px; text-align: center; border-bottom: 1px solid var(--cream-dark); }
+    .page-hero h1 { font-size: 2.8rem; margin-bottom: 0.8rem; }
+    .page-hero p  { font-size: 1rem; color: var(--ink-soft); max-width: 520px; margin: 0 auto; }
+
+    .consult-section { padding: 80px 0; background: var(--white); }
+
+    .booking-section { padding: 80px 0; background: var(--cream); }
+    .booking-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .booking-info h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .booking-info > p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1.5rem; }
+
+    .booking-steps { margin-top: 2rem; }
+    .booking-step { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
+    .step-num { width: 36px; height: 36px; background: var(--green); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 500; flex-shrink: 0; }
+    .step-body h4 { font-size: 0.9rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
+    .step-body p  { font-size: 0.82rem; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+
+    .call-box { margin-top: 2rem; padding: 1.5rem; background: var(--green-wash); border: 1px solid var(--green-pale); border-radius: var(--radius-lg); }
+    .call-box p { margin: 0; font-size: 0.85rem; color: var(--ink-mid); }
+    .call-box i { color: var(--green); margin-right: 8px; }
+
+    .booking-form { background: var(--white); border: 1px solid var(--cream-dark); border-radius: var(--radius-lg); padding: 2.5rem; }
+    .booking-form h3 { font-size: 1.5rem; margin-bottom: 1.8rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); font-weight: 500; margin-bottom: 0.5rem; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { width: 100%; padding: 11px 14px; border: 1px solid var(--cream-dark); border-radius: var(--radius); background: var(--cream); font-family: 'Jost', sans-serif; font-size: 0.88rem; color: var(--ink); outline: none; transition: border-color var(--transition); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--green); background: var(--white); }
+    .form-group textarea { height: 100px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .btn-form { width: 100%; background: var(--green); color: var(--white); border: none; padding: 13px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.07em; margin-top: 0.5rem; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn-form:hover { background: var(--green-mid); }
+
+    @media (max-width: 860px) { .booking-inner { grid-template-columns: 1fr; gap: 2.5rem; } .form-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag">Expert Support</span>
+      <h1>Wellness Guidance From <em>Certified Professionals</em></h1>
+      <p>Our health professionals help you find the right products and wellness plan for your personal needs.</p>
+    </div>
+  </div>
+
+  <section class="consult-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Services</span>
+        <h2>What We Offer</h2>
+        <p>Choose the service that suits your needs. All consultations are with certified professionals.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card"><div class="service-icon icon-massage"><i class="fas fa-spa"></i></div><h3>Massage Therapy</h3><p>Professional therapeutic massage services for relaxation and healing</p><a href="#book" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><div class="service-icon icon-doctor"><i class="fas fa-user-md"></i></div><h3>Doctor Consultation</h3><p>Book appointments with certified healthcare professionals</p><a href="#book" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><div class="service-icon icon-nutrition"><i class="fas fa-apple-alt"></i></div><h3>Nutrition Support</h3><p>Personalized nutrition plans and dietary guidance</p><a href="#book" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><div class="service-icon icon-wellness"><i class="fas fa-users"></i></div><h3>Wellness Programs</h3><p>Comprehensive wellness programs for holistic health</p><a href="#book" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="booking-section">
+    <div class="container">
+      <div class="booking-inner">
+
+        <div class="booking-info">
+          <span class="section-tag">Book Appointment</span>
+          <h2>Ready to Start Your <em>Wellness Journey?</em></h2>
+          <p>Fill in the form and one of our certified professionals will contact you to confirm your appointment.</p>
+          <div class="booking-steps">
+            <div class="booking-step"><div class="step-num">1</div><div class="step-body"><h4>Fill in your details</h4><p>Tell us your name, contact, and the service you need.</p></div></div>
+            <div class="booking-step"><div class="step-num">2</div><div class="step-body"><h4>We confirm your slot</h4><p>Our team will call or WhatsApp you within 24 hours.</p></div></div>
+            <div class="booking-step"><div class="step-num">3</div><div class="step-body"><h4>Attend your session</h4><p>Visit us at Remera, Kanombe Kucyamitsingi KN5Road.</p></div></div>
+          </div>
+          <div class="call-box">
+            <p><i class="fas fa-phone"></i> Prefer to call? Reach us at <strong>+250 788 333 339</strong></p>
+          </div>
+        </div>
+
+        <div class="booking-form">
+          <h3>Book an Appointment</h3>
+          <form onsubmit="handleBooking(event)">
+            <div class="form-row">
+              <div class="form-group"><label>First Name</label><input type="text" placeholder="Your first name" required /></div>
+              <div class="form-group"><label>Last Name</label><input type="text" placeholder="Your last name" required /></div>
+            </div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+250 7XX XXX XXX" required /></div>
+            <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com" /></div>
+            <div class="form-group">
+              <label>Service</label>
+              <select required>
+                <option value="" disabled selected>Select a service</option>
+                <option>Massage Therapy</option>
+                <option>Doctor Consultation</option>
+                <option>Nutrition Support</option>
+                <option>Wellness Program</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Preferred Date</label><input type="date" required /></div>
+            <div class="form-group"><label>Additional Notes (optional)</label><textarea placeholder="Tell us anything helpful about your needs..."></textarea></div>
+            <button type="submit" class="btn-form"><i class="fas fa-calendar-check"></i> Request Appointment</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script>
+    function handleBooking(e) {
+      e.preventDefault();
+      alert('Thank you! Your appointment request has been received. We will contact you within 24 hours to confirm.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>

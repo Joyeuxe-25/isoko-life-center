@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Isoko Life Center</title>
+  <meta name="description" content="Shop premium supplements, herbal remedies, cosmetics and wellness products at Isoko Life Center." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <style>
+    .page-hero { background: linear-gradient(135deg, var(--green-wash) 0%, var(--cream) 100%); padding: 60px 0 48px; text-align: center; border-bottom: 1px solid var(--cream-dark); }
+    .page-hero h1 { font-size: 2.8rem; margin-bottom: 0.8rem; }
+    .page-hero p  { font-size: 1rem; color: var(--ink-soft); max-width: 520px; margin: 0 auto; }
+
+    .filter-bar { padding: 20px 0; background: var(--white); border-bottom: 1px solid var(--cream-dark); position: sticky; top: 37px; z-index: 50; }
+    .filter-bar .container { display: flex; gap: 10px; flex-wrap: wrap; }
+    .filter-btn { padding: 8px 20px; border-radius: 40px; border: 1px solid var(--cream-dark); background: var(--white); color: var(--ink-soft); font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.05em; cursor: pointer; transition: var(--transition); }
+    .filter-btn:hover { border-color: var(--green); color: var(--green); }
+    .filter-btn.active { background: var(--green); border-color: var(--green); color: var(--white); }
+
+    .products-page { padding: 60px 0 90px; background: var(--white); }
+
+    .page-cta { background: var(--green); padding: 60px 0; text-align: center; }
+    .page-cta h2 { color: var(--white); font-size: 2rem; margin-bottom: 0.8rem; }
+    .page-cta p  { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 1.8rem; }
+    .btn-white { background: var(--white); color: var(--green); padding: 13px 28px; border: none; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.07em; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; transition: var(--transition); }
+    .btn-white:hover { background: var(--cream); }
+
+    @media (max-width: 1060px) { .product-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 600px)  { .product-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag">Our Products</span>
+      <h1>Wellness &amp; <em>Beauty Products</em></h1>
+      <p>Premium supplements, herbal remedies, cosmetics and wellness products — trusted by thousands of customers across Rwanda.</p>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <div class="container">
+      <button class="filter-btn active" data-filter="all">All Products</button>
+      <button class="filter-btn" data-filter="supplement">Supplements</button>
+      <button class="filter-btn" data-filter="cosmetic">Cosmetics</button>
+      <button class="filter-btn" data-filter="wellness">Wellness</button>
+    </div>
+  </div>
+
+  <section class="products-page">
+    <div class="container">
+      <div class="product-grid">
+
+        <div class="product-card" data-category="supplement">
+          <span class="product-badge badge-bestseller">Best Seller</span>
+          <div class="product-img product-img-1"><i class="fas fa-capsules"></i></div>
+          <div class="product-body">
+            <span class="product-cat">Supplement</span><h3>Immune Booster Pro</h3><p>Advanced formula for immune system support</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span></div><span class="price">$49.99</span></div>
+            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="cosmetic">
+          <span class="product-badge badge-new">New</span>
+          <div class="product-img product-img-2"><i class="fas fa-spa"></i></div>
+          <div class="product-body">
+            <span class="product-cat">Cosmetic</span><h3>Herbal Glow Cream</h3><p>Natural anti-aging facial cream</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span></div><span class="price">$34.99</span></div>
+            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="supplement">
+          <span class="product-badge badge-premium">Premium</span>
+          <div class="product-img product-img-3"><i class="fas fa-bolt"></i></div>
+          <div class="product-body">
+            <span class="product-cat">Supplement</span><h3>Energy Vitality Capsules</h3><p>Sustained energy and vitality support</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div><span class="price">$59.99</span></div>
+            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="wellness">
+          <span class="product-badge badge-popular">Popular</span>
+          <div class="product-img product-img-4"><i class="fas fa-hands"></i></div>
+          <div class="product-body">
+            <span class="product-cat">Wellness</span><h3>Wellness Massage Oil</h3><p>Therapeutic massage oil blend</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.7</span></div><span class="price">$29.99</span></div>
+            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="page-cta">
+    <div class="container">
+      <h2>Need Help Choosing?</h2>
+      <p>Our certified health professionals can guide you to the right products for your needs.</p>
+      <a href="consultation.html" class="btn-white"><i class="fas fa-user-md"></i> Book a Free Consultation</a>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        document.querySelectorAll('.product-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

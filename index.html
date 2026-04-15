@@ -5,399 +5,177 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Isoko Life Center | Wellness &amp; Beauty Products</title>
   <meta name="description" content="Shop trusted wellness, beauty, and health products at Isoko Life Center. Premium supplements, herbal remedies, and cosmetics — delivered in Rwanda." />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <!-- Icons & Flags -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
-
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/sections.css" />
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="container">
-      <button class="lang-btn active" data-lang="en"><span class="fi fi-gb"></span> English</button>
-      <button class="lang-btn" data-lang="fr"><span class="fi fi-fr"></span> Français</button>
-      <button class="lang-btn" data-lang="rw"><span class="fi fi-rw"></span> Kinyarwanda</button>
-    </div>
-  </div>
+  <div id="site-header"></div>
 
-  <nav class="navbar">
-    <div class="container">
-      <a href="#home" class="logo">
-        <div class="logo-mark">IL</div>
-        <div class="logo-text">
-          <span class="logo-name" data-i18n="company_name">Isoko Life</span>
-          <span class="logo-sub" data-i18n="company_tag">Center Ltd</span>
-        </div>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#home"         data-i18n="nav_home">Home</a></li>
-        <li><a href="#products"     data-i18n="nav_products">Products</a></li>
-        <li><a href="#consultation" data-i18n="nav_consultation">Consultation</a></li>
-        <li><a href="#contact"      data-i18n="nav_contact">Contact</a></li>
-        <li><a href="#partner"      data-i18n="nav_partner">Partner With Us</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="btn-nav-login"    data-i18n="btn_login">Login</button>
-        <button class="btn-nav-register" data-i18n="btn_register">Register</button>
-        <button class="menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- 1. HERO -->
-  <section id="home" class="hero">
+  <!-- HERO -->
+  <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge">
-          <i class="fas fa-award"></i>
-          <span data-i18n="hero_trusted">Trusted by 10,000+ Customers</span>
-        </div>
-        <h1 id="hero-title">
-          Premium Wellness &amp; <em>Beauty Products</em> You Can Trust
-        </h1>
+        <div class="hero-badge"><i class="fas fa-award"></i> Trusted by 10,000+ Customers</div>
+        <h1>Premium Wellness &amp; <em>Beauty Products</em> You Can Trust</h1>
         <p class="hero-slogan"></p>
-        <p class="hero-desc" data-i18n="hero_description">
-          Shop premium supplements, herbal remedies, and beauty products carefully selected
-          for your health and wellbeing. Delivered across Rwanda.
-        </p>
+        <p class="hero-desc">Shop premium supplements, herbal remedies, and beauty products carefully selected for your health and wellbeing. Delivered across Rwanda.</p>
         <div class="hero-btns">
-          <a href="#products" class="btn-primary">
-            <i class="fas fa-shopping-bag"></i>
-            <span data-i18n="btn_shop">Shop Products</span>
-          </a>
-          <a href="#consultation" class="btn-secondary">
-            <i class="fas fa-user-md"></i>
-            <span data-i18n="btn_consultation">Book Consultation</span>
-          </a>
+          <a href="products.html" class="btn-primary"><i class="fas fa-shopping-bag"></i> Shop Products</a>
+          <a href="consultation.html" class="btn-secondary"><i class="fas fa-user-md"></i> Book Consultation</a>
         </div>
         <div class="hero-trust">
-          <div class="trust-item">
-            <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
-            <span class="trust-label" data-i18n="feature_quality">Certified Quality</span>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon"><i class="fas fa-truck"></i></div>
-            <span class="trust-label" data-i18n="feature_shipping">Free Shipping</span>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon"><i class="fas fa-medal"></i></div>
-            <span class="trust-label" data-i18n="feature_guarantee">Money Back Guarantee</span>
-          </div>
+          <div class="trust-item"><div class="trust-icon"><i class="fas fa-shield-alt"></i></div><span class="trust-label">Certified Quality</span></div>
+          <div class="trust-item"><div class="trust-icon"><i class="fas fa-truck"></i></div><span class="trust-label">Free Shipping</span></div>
+          <div class="trust-item"><div class="trust-icon"><i class="fas fa-medal"></i></div><span class="trust-label">Money Back Guarantee</span></div>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-card">
           <div class="hero-card-tag">Rwanda</div>
           <div class="hero-leaf-ring"><i class="fas fa-leaf"></i></div>
-          <h3 data-i18n="hero_image_title">Natural Wellness</h3>
-          <p data-i18n="hero_image_subtitle">Supplements, herbal &amp; beauty products</p>
+          <h3>Natural Wellness</h3>
+          <p>Supplements, herbal &amp; beauty products</p>
         </div>
         <div class="hero-float">
           <div class="hero-float-icon"><i class="fas fa-heart"></i></div>
           <div>
             <div class="hero-float-num">10,000+</div>
-            <div class="hero-float-label" data-i18n="hero_float_label">Happy Customers</div>
+            <div class="hero-float-label">Happy Customers</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. WHY CHOOSE US -->
+  <!-- WHY CHOOSE US -->
   <section class="why-us">
     <div class="container">
       <div class="why-us-grid">
-        <div class="why-item">
-          <div class="why-icon"><i class="fas fa-leaf"></i></div>
-          <h4 data-i18n="why1_title">Natural Ingredients</h4>
-          <p data-i18n="why1_desc">Every product is made from carefully sourced natural and herbal ingredients.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
-          <h4 data-i18n="why2_title">Certified Quality</h4>
-          <p data-i18n="why2_desc">All products meet quality standards so you can shop with confidence.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-icon"><i class="fas fa-truck"></i></div>
-          <h4 data-i18n="why3_title">Fast Delivery</h4>
-          <p data-i18n="why3_desc">Free shipping on your orders, delivered directly to your door across Rwanda.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-icon"><i class="fas fa-headset"></i></div>
-          <h4 data-i18n="why4_title">Expert Support</h4>
-          <p data-i18n="why4_desc">Our certified health professionals help you find the right products for your needs.</p>
-        </div>
+        <div class="why-item"><div class="why-icon"><i class="fas fa-leaf"></i></div><h4>Natural Ingredients</h4><p>Every product is made from carefully sourced natural and herbal ingredients.</p></div>
+        <div class="why-item"><div class="why-icon"><i class="fas fa-shield-alt"></i></div><h4>Certified Quality</h4><p>All products meet quality standards so you can shop with confidence.</p></div>
+        <div class="why-item"><div class="why-icon"><i class="fas fa-truck"></i></div><h4>Fast Delivery</h4><p>Free shipping on your orders, delivered directly to your door across Rwanda.</p></div>
+        <div class="why-item"><div class="why-icon"><i class="fas fa-headset"></i></div><h4>Expert Support</h4><p>Our certified health professionals help you find the right products for your needs.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- 3. PRODUCTS -->
-  <section id="products" class="products">
+  <!-- FEATURED PRODUCTS -->
+  <section class="products">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="products_tag">Our Products</span>
-        <h2 data-i18n="products_title">Shop Our Best Sellers</h2>
-        <p data-i18n="products_subtitle">Premium supplements, herbal remedies, and beauty products — trusted by thousands of customers across Rwanda.</p>
+        <span class="section-tag">Our Products</span>
+        <h2>Shop Our Best Sellers</h2>
+        <p>Premium supplements, herbal remedies, and beauty products — trusted by thousands of customers across Rwanda.</p>
       </div>
       <div class="product-grid">
-
         <div class="product-card">
-          <span class="product-badge badge-bestseller" data-i18n="badge_bestseller">Best Seller</span>
+          <span class="product-badge badge-bestseller">Best Seller</span>
           <div class="product-img product-img-1"><i class="fas fa-capsules"></i></div>
           <div class="product-body">
-            <span class="product-cat" data-i18n="category_supplement">Supplement</span>
-            <h3 data-i18n="product1_name">Immune Booster Pro</h3>
-            <p data-i18n="product1_desc">Advanced formula for immune system support</p>
-            <div class="product-meta">
-              <div class="rating">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span>
-              </div>
-              <span class="price">$49.99</span>
-            </div>
-            <button class="btn-cart"><i class="fas fa-shopping-bag"></i><span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+            <span class="product-cat">Supplement</span><h3>Immune Booster Pro</h3><p>Advanced formula for immune system support</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span></div><span class="price">$49.99</span></div>
+            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
           </div>
         </div>
-
         <div class="product-card">
-          <span class="product-badge badge-new" data-i18n="badge_new">New</span>
+          <span class="product-badge badge-new">New</span>
           <div class="product-img product-img-2"><i class="fas fa-spa"></i></div>
           <div class="product-body">
-            <span class="product-cat" data-i18n="category_cosmetic">Cosmetic</span>
-            <h3 data-i18n="product2_name">Herbal Glow Cream</h3>
-            <p data-i18n="product2_desc">Natural anti-aging facial cream</p>
-            <div class="product-meta">
-              <div class="rating">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                <i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span>
-              </div>
-              <span class="price">$34.99</span>
-            </div>
-            <button class="btn-cart"><i class="fas fa-shopping-bag"></i><span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+            <span class="product-cat">Cosmetic</span><h3>Herbal Glow Cream</h3><p>Natural anti-aging facial cream</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span></div><span class="price">$34.99</span></div>
+            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
           </div>
         </div>
-
         <div class="product-card">
-          <span class="product-badge badge-premium" data-i18n="badge_premium">Premium</span>
+          <span class="product-badge badge-premium">Premium</span>
           <div class="product-img product-img-3"><i class="fas fa-bolt"></i></div>
           <div class="product-body">
-            <span class="product-cat" data-i18n="category_supplement">Supplement</span>
-            <h3 data-i18n="product3_name">Energy Vitality Capsules</h3>
-            <p data-i18n="product3_desc">Sustained energy and vitality support</p>
-            <div class="product-meta">
-              <div class="rating">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span>
-              </div>
-              <span class="price">$59.99</span>
-            </div>
-            <button class="btn-cart"><i class="fas fa-shopping-bag"></i><span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+            <span class="product-cat">Supplement</span><h3>Energy Vitality Capsules</h3><p>Sustained energy and vitality support</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div><span class="price">$59.99</span></div>
+            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
           </div>
         </div>
-
         <div class="product-card">
-          <span class="product-badge badge-popular" data-i18n="badge_popular">Popular</span>
+          <span class="product-badge badge-popular">Popular</span>
           <div class="product-img product-img-4"><i class="fas fa-hands"></i></div>
           <div class="product-body">
-            <span class="product-cat" data-i18n="category_wellness">Wellness</span>
-            <h3 data-i18n="product4_name">Wellness Massage Oil</h3>
-            <p data-i18n="product4_desc">Therapeutic massage oil blend</p>
-            <div class="product-meta">
-              <div class="rating">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.7</span>
-              </div>
-              <span class="price">$29.99</span>
-            </div>
-            <button class="btn-cart"><i class="fas fa-shopping-bag"></i><span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+            <span class="product-cat">Wellness</span><h3>Wellness Massage Oil</h3><p>Therapeutic massage oil blend</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.7</span></div><span class="price">$29.99</span></div>
+            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
           </div>
         </div>
-
       </div>
       <div class="products-cta">
-        <p data-i18n="products_cta_text">Not sure which product is right for you?</p>
-        <a href="#consultation" class="btn-secondary">
-          <i class="fas fa-user-md"></i>
-          <span data-i18n="products_cta_btn">Ask Our Health Experts</span>
-        </a>
+        <p>Not sure which product is right for you?</p>
+        <a href="consultation.html" class="btn-secondary"><i class="fas fa-user-md"></i> Ask Our Health Experts</a>
       </div>
     </div>
   </section>
 
-  <!-- 4. CONSULTATION -->
-  <section id="consultation" class="services">
+  <!-- SERVICES PREVIEW -->
+  <section class="services">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="consult_tag">Expert Support</span>
-        <h2 data-i18n="consult_title">Wellness Guidance From Certified Professionals</h2>
-        <p data-i18n="consult_subtitle">Not sure which products suit your health needs? Our certified professionals are here to guide you.</p>
+        <span class="section-tag">Expert Support</span>
+        <h2>Wellness Guidance From Certified Professionals</h2>
+        <p>Not sure which products suit your health needs? Our certified professionals are here to guide you.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon icon-massage"><i class="fas fa-spa"></i></div>
-          <h3 data-i18n="service1_title">Massage Therapy</h3>
-          <p data-i18n="service1_desc">Professional therapeutic massage services for relaxation and healing</p>
-          <a href="#contact" class="service-link"><span data-i18n="btn_book">Book Now</span><i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div id="doctor" class="service-card">
-          <div class="service-icon icon-doctor"><i class="fas fa-user-md"></i></div>
-          <h3 data-i18n="service2_title">Doctor Consultation</h3>
-          <p data-i18n="service2_desc">Book appointments with certified healthcare professionals</p>
-          <a href="#contact" class="service-link"><span data-i18n="btn_book">Book Now</span><i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon icon-nutrition"><i class="fas fa-apple-alt"></i></div>
-          <h3 data-i18n="service3_title">Nutrition Support</h3>
-          <p data-i18n="service3_desc">Personalized nutrition plans and dietary guidance</p>
-          <a href="#contact" class="service-link"><span data-i18n="btn_book">Book Now</span><i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon icon-wellness"><i class="fas fa-users"></i></div>
-          <h3 data-i18n="service4_title">Wellness Programs</h3>
-          <p data-i18n="service4_desc">Comprehensive wellness programs for holistic health</p>
-          <a href="#contact" class="service-link"><span data-i18n="btn_book">Book Now</span><i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="service-card"><div class="service-icon icon-massage"><i class="fas fa-spa"></i></div><h3>Massage Therapy</h3><p>Professional therapeutic massage services for relaxation and healing</p><a href="consultation.html" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><div class="service-icon icon-doctor"><i class="fas fa-user-md"></i></div><h3>Doctor Consultation</h3><p>Book appointments with certified healthcare professionals</p><a href="consultation.html" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><div class="service-icon icon-nutrition"><i class="fas fa-apple-alt"></i></div><h3>Nutrition Support</h3><p>Personalized nutrition plans and dietary guidance</p><a href="consultation.html" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><div class="service-icon icon-wellness"><i class="fas fa-users"></i></div><h3>Wellness Programs</h3><p>Comprehensive wellness programs for holistic health</p><a href="consultation.html" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a></div>
       </div>
     </div>
   </section>
 
-  <!-- 5. PARTNER WITH US -->
-  <section id="partner" class="business">
+  <!-- PARTNER PREVIEW -->
+  <section class="business">
     <div class="container">
       <div class="business-inner">
         <div class="business-text">
-          <div class="business-tag">
-            <i class="fas fa-chart-line"></i>
-            <span data-i18n="business_tag">Partner With Us</span>
-          </div>
-          <h2 id="business-title">Love Our Products? <em>Share Them</em> and Earn</h2>
-          <p data-i18n="business_description">If you believe in natural wellness, join our partner network and earn by sharing products you already trust. We provide training, marketing support, and a proven model.</p>
+          <div class="business-tag"><i class="fas fa-chart-line"></i> Partner With Us</div>
+          <h2>Love Our Products? <em>Share Them</em> and Earn</h2>
+          <p>If you believe in natural wellness, join our partner network and earn by sharing products you already trust.</p>
           <div class="benefits">
-            <div class="benefit">
-              <div class="benefit-icon"><i class="fas fa-dollar-sign"></i></div>
-              <div class="benefit-body">
-                <h4 data-i18n="benefit1_title">Earn From Every Sale</h4>
-                <p data-i18n="benefit1_desc">Unlimited income through commissions and bonuses</p>
-              </div>
-            </div>
-            <div class="benefit">
-              <div class="benefit-icon"><i class="fas fa-users"></i></div>
-              <div class="benefit-body">
-                <h4 data-i18n="benefit2_title">Build Your Network</h4>
-                <p data-i18n="benefit2_desc">Create your own team and earn from their success</p>
-              </div>
-            </div>
-            <div class="benefit">
-              <div class="benefit-icon"><i class="fas fa-clock"></i></div>
-              <div class="benefit-body">
-                <h4 data-i18n="benefit4_title">Flexible Schedule</h4>
-                <p data-i18n="benefit4_desc">Work from anywhere, set your own hours</p>
-              </div>
-            </div>
+            <div class="benefit"><div class="benefit-icon"><i class="fas fa-dollar-sign"></i></div><div class="benefit-body"><h4>Earn From Every Sale</h4><p>Unlimited income through commissions and bonuses</p></div></div>
+            <div class="benefit"><div class="benefit-icon"><i class="fas fa-users"></i></div><div class="benefit-body"><h4>Build Your Network</h4><p>Create your own team and earn from their success</p></div></div>
+            <div class="benefit"><div class="benefit-icon"><i class="fas fa-clock"></i></div><div class="benefit-body"><h4>Flexible Schedule</h4><p>Work from anywhere, set your own hours</p></div></div>
           </div>
-          <button class="btn-secondary btn-nav-register">
-            <span data-i18n="btn_learn_earning">Learn About Partnering</span>
-            <i class="fas fa-arrow-right"></i>
-          </button>
+          <a href="partner.html" class="btn-secondary">Learn About Partnering <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="business-panel">
           <div class="stats-card">
-            <h4 data-i18n="stats_title">Our Network</h4>
+            <h4>Our Network</h4>
             <div class="stats-grid">
-              <div class="stat"><span class="stat-num">5,000+</span><span class="stat-label" data-i18n="stat1_label">Active Partners</span></div>
-              <div class="stat"><span class="stat-num">$1M+</span><span class="stat-label" data-i18n="stat2_label">Total Payouts</span></div>
-              <div class="stat"><span class="stat-num">15+</span><span class="stat-label" data-i18n="stat3_label">Countries</span></div>
-              <div class="stat"><span class="stat-num">24/7</span><span class="stat-label" data-i18n="stat4_label">Support</span></div>
+              <div class="stat"><span class="stat-num">5,000+</span><span class="stat-label">Active Partners</span></div>
+              <div class="stat"><span class="stat-num">$1M+</span><span class="stat-label">Total Payouts</span></div>
+              <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Countries</span></div>
+              <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Support</span></div>
             </div>
           </div>
           <div class="ussd-card">
-            <h4><i class="fas fa-mobile-alt"></i><span data-i18n="ussd_title">Quick Access via USSD</span></h4>
-            <div class="ussd-code-box">
-              <span class="ussd-code">*123#</span>
-              <span class="ussd-label" data-i18n="ussd_label">Main Menu</span>
-            </div>
-            <p class="ussd-desc" data-i18n="ussd_description">Order products, book services, and manage your account directly from your phone</p>
-            <button class="btn-ussd"><span data-i18n="btn_try_now">Try Now</span></button>
+            <h4><i class="fas fa-mobile-alt"></i> Quick Access via USSD</h4>
+            <div class="ussd-code-box"><span class="ussd-code">*123#</span><span class="ussd-label">Main Menu</span></div>
+            <p class="ussd-desc">Order products, book services, and manage your account directly from your phone</p>
+            <button class="btn-ussd">Try Now</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="contact" class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="footer-logo">
-            <div class="footer-logo-mark">IL</div>
-            <div>
-              <span class="footer-logo-name" data-i18n="company_name">Isoko Life</span>
-              <span class="footer-logo-sub" data-i18n="company_tag">Center Ltd</span>
-            </div>
-          </div>
-          <p class="footer-about" data-i18n="footer_description">Trusted wellness and beauty products for Rwanda — backed by certified health professionals.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h5 data-i18n="footer_links">Quick Links</h5>
-          <ul>
-            <li><a href="#home"         data-i18n="nav_home">Home</a></li>
-            <li><a href="#products"     data-i18n="nav_products">Products</a></li>
-            <li><a href="#consultation" data-i18n="nav_consultation">Consultation</a></li>
-            <li><a href="#partner"      data-i18n="nav_partner">Partner With Us</a></li>
-            <li><a href="#contact"      data-i18n="nav_contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5 data-i18n="footer_contact">Contact Us</h5>
-          <ul class="contact-list">
-            <li><i class="fas fa-map-marker-alt"></i><span data-i18n="contact_address">Remera, Kanombe Kucyamitsingi KN5Road</span></li>
-            <li><i class="fas fa-phone"></i><span>+250 788 333 339</span></li>
-            <li><i class="fas fa-envelope"></i><span>info@isokolifecenter.com</span></li>
-          </ul>
-        </div>
-        <div class="footer-col newsletter-form">
-          <h5 data-i18n="footer_newsletter">Newsletter</h5>
-          <p data-i18n="newsletter_description">Subscribe for health tips, product updates, and exclusive offers.</p>
-          <form class="newsletter-input-wrap" onsubmit="return false;">
-            <input type="email" data-i18n="placeholder_email" placeholder="Your email address" required />
-            <button type="submit" class="btn-subscribe" data-i18n="btn_subscribe">Subscribe</button>
-          </form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="currentYear"></span> <span data-i18n="company_name">Isoko Life</span> <span data-i18n="company_tag">Center Ltd</span>. <span data-i18n="footer_rights">All rights reserved.</span></p>
-        <div class="footer-legal">
-          <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
-          <a href="#" data-i18n="footer_terms">Terms of Service</a>
-          <a href="#" data-i18n="footer_cookies">Cookie Policy</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <a href="https://wa.me/250788333339" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <div id="site-footer"></div>
 
   <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
-
+  <script src="js/components.js"></script>
 </body>
 </html>
