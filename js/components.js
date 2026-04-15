@@ -1,7 +1,7 @@
 /* ============================================================
    ISOKO LIFE CENTER — components.js
-   Inlines header + footer directly. No fetch. No timing issues.
-   Language buttons wired after injection.
+   Inlines header + footer, wires all interactions,
+   then calls translatePage() so ALL elements get translated.
    ============================================================ */
 
 const HEADER_HTML = `
@@ -34,8 +34,7 @@ const HEADER_HTML = `
       <button class="menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
     </div>
   </div>
-</nav>
-`;
+</nav>`;
 
 const FOOTER_HTML = `
 <footer class="footer">
@@ -49,7 +48,7 @@ const FOOTER_HTML = `
             <span class="footer-logo-sub">Center Ltd</span>
           </div>
         </div>
-        <p class="footer-about">Trusted wellness and beauty products for Rwanda — backed by certified health professionals.</p>
+        <p class="footer-about" data-i18n="footer_description">Trusted wellness and beauty products for Rwanda — backed by certified health professionals.</p>
         <div class="social-links">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -58,46 +57,45 @@ const FOOTER_HTML = `
         </div>
       </div>
       <div class="footer-col">
-        <h5>Quick Links</h5>
+        <h5 data-i18n="footer_links">Quick Links</h5>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="consultation.html">Consultation</a></li>
-          <li><a href="partner.html">Partner With Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+          <li><a href="consultation.html" data-i18n="nav_consultation">Consultation</a></li>
+          <li><a href="partner.html" data-i18n="nav_partner">Partner With Us</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Contact Us</h5>
+        <h5 data-i18n="footer_contact">Contact Us</h5>
         <ul class="contact-list">
-          <li><i class="fas fa-map-marker-alt"></i><span>Remera, Kanombe Kucyamitsingi KN5Road</span></li>
+          <li><i class="fas fa-map-marker-alt"></i><span data-i18n="contact_address">Remera, Kanombe Kucyamitsingi KN5Road</span></li>
           <li><i class="fas fa-phone"></i><span>+250 788 333 339</span></li>
           <li><i class="fas fa-envelope"></i><span>info@isokolifecenter.com</span></li>
         </ul>
       </div>
       <div class="footer-col newsletter-form">
-        <h5>Newsletter</h5>
-        <p>Subscribe for health tips, product updates, and exclusive offers.</p>
+        <h5 data-i18n="footer_newsletter">Newsletter</h5>
+        <p data-i18n="newsletter_description">Subscribe for health tips, product updates, and exclusive offers.</p>
         <form class="newsletter-input-wrap" onsubmit="handleNewsletter(event)">
-          <input type="email" placeholder="Your email address" required />
-          <button type="submit" class="btn-subscribe">Subscribe</button>
+          <input type="email" data-i18n="placeholder_email" placeholder="Your email address" required />
+          <button type="submit" class="btn-subscribe" data-i18n="btn_subscribe">Subscribe</button>
         </form>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; <span id="currentYear"></span> Isoko Life Center Ltd. All rights reserved.</p>
+      <p>&copy; <span id="currentYear"></span> Isoko Life Center Ltd. <span data-i18n="footer_rights">All rights reserved.</span></p>
       <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Policy</a>
+        <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer_terms">Terms of Service</a>
+        <a href="#" data-i18n="footer_cookies">Cookie Policy</a>
       </div>
     </div>
   </div>
 </footer>
 <a href="https://wa.me/250788333339" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="WhatsApp">
   <i class="fab fa-whatsapp"></i>
-</a>
-`;
+</a>`;
 
 function initComponents() {
   /* ── Inject header and footer ── */
@@ -117,23 +115,11 @@ function initComponents() {
   if (activeLink) activeLink.classList.add('nav-active');
 
   /* ── Language buttons ── */
-  const savedLang = localStorage.getItem('isoko_lang') || 'en';
-
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    /* Set active state */
-    btn.classList.toggle('active', btn.dataset.lang === savedLang);
-
-    /* Wire click */
     btn.addEventListener('click', function () {
       const lang = this.dataset.lang;
       if (!lang || !translations[lang]) return;
-
-      /* Update active button */
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-
-      /* Translate the page */
-      translatePage(lang);
+      translatePage(lang, true);
     });
   });
 
@@ -149,7 +135,7 @@ function initComponents() {
     });
   }
 
-  /* ── Navbar scroll shadow ── */
+  /* ── Navbar scroll ── */
   const navbar = document.querySelector('.navbar');
   if (navbar) {
     window.addEventListener('scroll', () => {
@@ -157,43 +143,33 @@ function initComponents() {
     }, { passive: true });
   }
 
-  /* ── Login / Register buttons ── */
+  /* ── Login / Register ── */
   document.querySelector('.btn-nav-login')?.addEventListener('click', () => {
-    const lang = localStorage.getItem('isoko_lang') || 'en';
-    const m = {
-      en: 'Login page coming soon.',
-      fr: 'Page de connexion bientôt disponible.',
-      rw: 'Urupapuro rwo kwinjira ruzaza vuba.'
-    };
-    showNotification(m[lang] || m.en, 'info');
+    const m = { en: 'Login page coming soon.', fr: 'Page de connexion bientôt disponible.', rw: 'Urupapuro rwo kwinjira ruzaza vuba.' };
+    showNotification(m[currentLang] || m.en, 'info');
+  });
+  document.querySelector('.btn-nav-register')?.addEventListener('click', () => {
+    const m = { en: 'Registration page coming soon.', fr: "Page d'inscription bientôt disponible.", rw: 'Urupapuro rwo kwiyandikisha ruzaza vuba.' };
+    showNotification(m[currentLang] || m.en, 'info');
   });
 
-  document.querySelector('.btn-nav-register')?.addEventListener('click', () => {
-    const lang = localStorage.getItem('isoko_lang') || 'en';
-    const m = {
-      en: 'Registration page coming soon.',
-      fr: "Page d'inscription bientôt disponible.",
-      rw: 'Urupapuro rwo kwiyandikisha ruzaza vuba.'
-    };
-    showNotification(m[lang] || m.en, 'info');
-  });
+  /* ── Apply saved language to EVERYTHING now that DOM is ready ── */
+  const savedLang = localStorage.getItem('isoko_lang') || 'en';
+  translatePage(savedLang, false);
 }
 
-/* ── Newsletter handler (called from footer form) ── */
 function handleNewsletter(e) {
   e.preventDefault();
   const email = e.target.querySelector('input[type="email"]').value;
   if (email) {
-    const lang = localStorage.getItem('isoko_lang') || 'en';
     const m = {
       en: `Thank you for subscribing with ${email}!`,
       fr: `Merci de vous être abonné avec ${email} !`,
       rw: `Murakoze kwiyandikisha na ${email}!`
     };
-    showNotification(m[lang] || m.en, 'success');
+    showNotification(m[currentLang] || m.en, 'success');
     e.target.reset();
   }
 }
 
-/* Run immediately on DOMContentLoaded */
 document.addEventListener('DOMContentLoaded', initComponents);

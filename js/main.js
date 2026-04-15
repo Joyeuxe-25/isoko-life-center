@@ -1,6 +1,5 @@
 /* ============================================================
    ISOKO LIFE CENTER — main.js
-   Translations · Slogan rotation · Nav · Cart · Newsletter · USSD
    ============================================================ */
 
 'use strict';
@@ -11,21 +10,12 @@ let sloganIndex = 0;
 let sloganTimer = null;
 
 document.addEventListener('DOMContentLoaded', () => {
-  setYear();
-  translatePage(currentLang, false);
   startSloganRotation();
-  initNavScroll();
-  initMobileMenu();
-  initSmoothScroll();
   initCart();
   initUssd();
+  initSmoothScroll();
+  /* translatePage is called from components.js AFTER header/footer are injected */
 });
-
-/* ── YEAR ── */
-function setYear() {
-  const el = document.getElementById('currentYear');
-  if (el) el.textContent = new Date().getFullYear();
-}
 
 /* ── TRANSLATE ── */
 function translatePage(lang, showToast = true) {
@@ -33,26 +23,30 @@ function translatePage(lang, showToast = true) {
   currentLang = lang;
   const t = translations[lang];
 
+  /* All data-i18n elements */
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (!t[key]) return;
-    if (el.tagName === 'INPUT' && el.type === 'email') {
+    if (el.tagName === 'INPUT' && (el.type === 'email' || el.type === 'text' || el.type === 'tel')) {
       el.placeholder = t[key];
     } else {
       el.textContent = t[key];
     }
   });
 
+  /* Hero title */
   const heroTitle = document.getElementById('hero-title');
   if (heroTitle && t.hero_title_main) {
     heroTitle.innerHTML = `${t.hero_title_main} <em>${t.hero_title_em}</em> ${t.hero_title_suffix}`;
   }
 
+  /* Business title */
   const bizTitle = document.getElementById('business-title');
   if (bizTitle && t.business_title_main) {
     bizTitle.innerHTML = `${t.business_title_main} <em>${t.business_title_em}</em> ${t.business_title_suffix}`;
   }
 
+  /* Active lang button */
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
@@ -69,6 +63,7 @@ function translatePage(lang, showToast = true) {
 /* ── SLOGANS ── */
 function buildSlogans(lang) {
   const t = translations[lang];
+  if (!t) return;
   slogans = [t.slogan1, t.slogan2, t.slogan3, t.slogan4].filter(Boolean);
   sloganIndex = 0;
 }
@@ -108,28 +103,6 @@ function showLangToast(lang) {
   }, 2800);
 }
 
-/* ── NAVBAR SCROLL ── */
-function initNavScroll() {
-  const navbar = document.querySelector('.navbar');
-  if (!navbar) return;
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-}
-
-/* ── MOBILE MENU ── */
-function initMobileMenu() {
-  const toggle   = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  if (!toggle || !navLinks) return;
-  toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  document.addEventListener('click', e => {
-    if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('open');
-    }
-  });
-}
-
 /* ── SMOOTH SCROLL ── */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -147,44 +120,43 @@ function initSmoothScroll() {
 
 /* ── ADD TO CART ── */
 function initCart() {
-  document.querySelectorAll('.btn-cart').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const card = this.closest('.product-card');
-      const name = card?.querySelector('h3')?.textContent || '';
-      const messages = {
-        en: `"${name}" added to cart!`,
-        fr: `"${name}" ajouté au panier !`,
-        rw: `"${name}" yongewe mu biguzwe!`,
-      };
-      const original = this.innerHTML;
-      this.classList.add('added');
-      this.innerHTML = '<i class="fas fa-check"></i> <span>' +
-        (currentLang === 'fr' ? 'Ajouté!' : currentLang === 'rw' ? 'Yashyizweho!' : 'Added!') +
-        '</span>';
-      setTimeout(() => {
-        this.innerHTML = original;
-        this.classList.remove('added');
-      }, 2200);
-      showNotification(messages[currentLang] || messages.en, 'success');
-    });
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.btn-cart');
+    if (!btn) return;
+    const card = btn.closest('.product-card');
+    const name = card?.querySelector('h3')?.textContent || '';
+    const messages = {
+      en: `"${name}" added to cart!`,
+      fr: `"${name}" ajouté au panier !`,
+      rw: `"${name}" yongewe mu biguzwe!`,
+    };
+    const original = btn.innerHTML;
+    btn.classList.add('added');
+    btn.innerHTML = '<i class="fas fa-check"></i> <span>' +
+      (currentLang === 'fr' ? 'Ajouté!' : currentLang === 'rw' ? 'Yashyizweho!' : 'Added!') +
+      '</span>';
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.classList.remove('added');
+    }, 2200);
+    showNotification(messages[currentLang] || messages.en, 'success');
   });
 }
 
 /* ── USSD ── */
 function initUssd() {
-  document.querySelectorAll('.btn-ussd').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const messages = {
-        en: 'Dial *123# on your phone to access Isoko Life Center services.',
-        fr: 'Composez *123# sur votre téléphone pour accéder aux services.',
-        rw: 'Kanda *123# kuri telefoni yawe kugirango ugere ku serivisi.',
-      };
-      showNotification(messages[currentLang] || messages.en, 'info');
-    });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.btn-ussd')) return;
+    const messages = {
+      en: 'Dial *123# on your phone to access Isoko Life Center services.',
+      fr: 'Composez *123# sur votre téléphone pour accéder aux services.',
+      rw: 'Kanda *123# kuri telefoni yawe kugirango ugere ku serivisi.',
+    };
+    showNotification(messages[currentLang] || messages.en, 'info');
   });
 }
 
-/* ── NOTIFICATION HELPER ── */
+/* ── NOTIFICATION ── */
 function showNotification(message, type = 'success') {
   document.querySelectorAll('.site-notification').forEach(n => n.remove());
   const colors = {
