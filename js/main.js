@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCart();
   initUssd();
   initSmoothScroll();
-  initMobileMenu();
-  /* translatePage is called from components.js AFTER header/footer are injected */
 });
 
 /* ── TRANSLATE ── */
@@ -24,7 +22,6 @@ function translatePage(lang, showToast = true) {
   currentLang = lang;
   const t = translations[lang];
 
-  /* All data-i18n elements */
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (!t[key]) return;
@@ -35,19 +32,16 @@ function translatePage(lang, showToast = true) {
     }
   });
 
-  /* Hero title */
   const heroTitle = document.getElementById('hero-title');
   if (heroTitle && t.hero_title_main) {
     heroTitle.innerHTML = `${t.hero_title_main} <em>${t.hero_title_em}</em> ${t.hero_title_suffix}`;
   }
 
-  /* Business title */
   const bizTitle = document.getElementById('business-title');
   if (bizTitle && t.business_title_main) {
     bizTitle.innerHTML = `${t.business_title_main} <em>${t.business_title_em}</em> ${t.business_title_suffix}`;
   }
 
-  /* Active lang button */
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
@@ -59,6 +53,11 @@ function translatePage(lang, showToast = true) {
   showCurrentSlogan();
 
   if (showToast) showLangToast(lang);
+}
+
+/* ── SET LANG (called from topbar buttons) ── */
+function setLang(lang) {
+  translatePage(lang, true);
 }
 
 /* ── SLOGANS ── */
@@ -114,63 +113,8 @@ function initSmoothScroll() {
       const navH    = document.querySelector('.navbar')?.offsetHeight || 0;
       const topbarH = document.querySelector('.topbar')?.offsetHeight || 0;
       window.scrollTo({ top: target.offsetTop - navH - topbarH, behavior: 'smooth' });
-      closeMobileMenu();
     });
   });
-}
-
-/* ── MOBILE MENU ── */
-function initMobileMenu() {
-  const toggle   = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  if (!toggle || !navLinks) return;
-
-  /* Inject drawer header with label + close button */
-  const header = document.createElement('div');
-  header.className = 'mobile-menu-header';
-  header.innerHTML = `
-    <span>Menu</span>
-    <button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>
-  `;
-  navLinks.prepend(header);
-
-  /* Inject overlay behind drawer */
-  const overlay = document.createElement('div');
-  overlay.className = 'nav-overlay';
-  document.body.appendChild(overlay);
-
-  toggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.contains('open');
-    isOpen ? closeMobileMenu() : openMobileMenu();
-  });
-
-  header.querySelector('.mobile-menu-close').addEventListener('click', closeMobileMenu);
-  overlay.addEventListener('click', closeMobileMenu);
-
-  /* Close on Escape key */
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeMobileMenu();
-  });
-}
-
-function openMobileMenu() {
-  const toggle   = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const overlay  = document.querySelector('.nav-overlay');
-  navLinks?.classList.add('open');
-  toggle?.classList.add('open');
-  overlay?.classList.add('visible');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeMobileMenu() {
-  const toggle   = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const overlay  = document.querySelector('.nav-overlay');
-  navLinks?.classList.remove('open');
-  toggle?.classList.remove('open');
-  overlay?.classList.remove('visible');
-  document.body.style.overflow = '';
 }
 
 /* ── ADD TO CART ── */

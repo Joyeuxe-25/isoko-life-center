@@ -78,7 +78,7 @@
           <div class="newsletter-form">
             <p data-i18n="newsletter_description">Subscribe for health tips, product updates, and exclusive offers.</p>
             <div class="newsletter-input-wrap">
-              <input type="email" placeholder="your@email.com" data-i18n="placeholder_email" />
+              <input type="email" placeholder="your@email.com" />
               <button class="btn-subscribe" data-i18n="btn_subscribe">Subscribe</button>
             </div>
           </div>
@@ -99,33 +99,36 @@
   `;
 
   // ─── INJECT ──────────────────────────────────────────────────────────────────
-  const headerEl = document.getElementById('site-header');
-  const footerEl = document.getElementById('site-footer');
+  function injectComponents() {
+    const headerEl = document.getElementById('site-header');
+    const footerEl = document.getElementById('site-footer');
 
-  if (headerEl) headerEl.outerHTML = headerHTML;
-  if (footerEl) footerEl.outerHTML = footerHTML;
+    if (headerEl) headerEl.outerHTML = headerHTML;
+    if (footerEl) footerEl.outerHTML = footerHTML;
 
-  // Set footer year
-  const yearEl = document.getElementById('footer-year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('footer-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Navbar scroll shadow
-  window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 10);
-  });
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
 
-  // Mark active nav link
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    if (link.getAttribute('href') === currentPage) link.classList.add('nav-active');
-  });
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) link.classList.add('nav-active');
+    });
 
-  // ─── TRANSLATE after injection ───────────────────────────────────────────────
-  // Run translatePage now that header/footer are in the DOM
-  if (typeof translatePage === 'function') {
-    const savedLang = localStorage.getItem('isoko_lang') || 'en';
-    translatePage(savedLang, false);
+    if (typeof translatePage === 'function') {
+      const savedLang = localStorage.getItem('isoko_lang') || 'en';
+      translatePage(savedLang, false);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectComponents);
+  } else {
+    injectComponents();
   }
 
 })();
