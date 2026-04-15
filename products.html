@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/sections.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <style>
     .page-hero { background: linear-gradient(135deg, var(--green-wash) 0%, var(--cream) 100%); padding: 60px 0 48px; text-align: center; border-bottom: 1px solid var(--cream-dark); }
     .page-hero h1 { font-size: 2.8rem; margin-bottom: 0.8rem; }
@@ -27,6 +28,9 @@
     .page-cta p  { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 1.8rem; }
     .btn-white { background: var(--white); color: var(--green); padding: 13px 28px; border: none; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.07em; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; transition: var(--transition); }
     .btn-white:hover { background: var(--cream); }
+    .product-card-actions { display: flex; flex-direction: column; gap: 8px; }
+    .btn-view { width: 100%; background: transparent; color: var(--green); border: 1px solid var(--green-pale); padding: 9px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; transition: var(--transition); }
+    .btn-view:hover { background: var(--green-wash); border-color: var(--green); }
     @media (max-width: 1060px) { .product-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 600px)  { .product-grid { grid-template-columns: 1fr; } }
   </style>
@@ -39,7 +43,7 @@
     <div class="container">
       <span class="section-tag" data-i18n="products_tag">Our Products</span>
       <h1 data-i18n="products_page_title">Wellness &amp; Beauty Products</h1>
-      <p data-i18n="products_page_subtitle">Premium supplements, herbal remedies, cosmetics and wellness products — trusted by thousands of customers across Rwanda.</p>
+      <p data-i18n="products_page_subtitle">Premium supplements, herbal remedies, cosmetics and wellness products — trusted by hundreds of customers across Rwanda.</p>
     </div>
   </div>
 
@@ -67,7 +71,10 @@
               <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span></div>
               <span class="price">RWF 55,000</span>
             </div>
-            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+            <div class="product-card-actions">
+              <button class="btn-cart"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+              <a href="product-immune-booster.html" class="btn-view"><i class="fas fa-eye"></i> View Details</a>
+            </div>
           </div>
         </div>
 
@@ -82,7 +89,10 @@
               <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span></div>
               <span class="price">RWF 39,000</span>
             </div>
-            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+            <div class="product-card-actions">
+              <button class="btn-cart"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+              <a href="product-herbal-glow.html" class="btn-view"><i class="fas fa-eye"></i> View Details</a>
+            </div>
           </div>
         </div>
 
@@ -97,7 +107,10 @@
               <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div>
               <span class="price">RWF 67,000</span>
             </div>
-            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+            <div class="product-card-actions">
+              <button class="btn-cart"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+              <a href="product-energy-vitality.html" class="btn-view"><i class="fas fa-eye"></i> View Details</a>
+            </div>
           </div>
         </div>
 
@@ -112,7 +125,10 @@
               <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.7</span></div>
               <span class="price">RWF 33,000</span>
             </div>
-            <button class="btn-cart"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+            <div class="product-card-actions">
+              <button class="btn-cart"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_add_to_cart">Add to Cart</span></button>
+              <a href="product-massage-oil.html" class="btn-view"><i class="fas fa-eye"></i> View Details</a>
+            </div>
           </div>
         </div>
 

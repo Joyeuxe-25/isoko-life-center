@@ -344,3 +344,111 @@
   .footer-bottom  { flex-direction: column; text-align: center; }
   .footer-legal   { flex-wrap: wrap; justify-content: center; gap: 1rem; }
 }
+
+/* ── FIRST REVIEW SECTION ── */
+.first-review {
+  padding: 90px 0;
+  background: var(--cream);
+}
+.first-review-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.first-review-left h2 {
+  font-size: 2.4rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.first-review-left > p {
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+.review-perks { margin-bottom: 2rem; }
+.review-perk {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+  align-items: flex-start;
+}
+.review-perk-icon {
+  width: 42px; height: 42px;
+  background: var(--green-wash);
+  border: 1px solid var(--green-pale);
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.review-perk h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+.review-perk p {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.first-review-right {
+  display: flex;
+  justify-content: center;
+}
+.review-placeholder-card {
+  background: var(--white);
+  border: 2px dashed var(--cream-dark);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  width: 100%;
+  max-width: 380px;
+  transition: border-color var(--transition);
+}
+.review-placeholder-card:hover { border-color: var(--green-pale); }
+.review-placeholder-icon {
+  width: 70px; height: 70px;
+  background: var(--green-wash);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  color: var(--green);
+  margin: 0 auto 1.5rem;
+}
+.review-placeholder-card h3 {
+  font-size: 1.3rem;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+}
+.review-placeholder-card p {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+.review-stars-empty {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  font-size: 1.4rem;
+  color: var(--cream-dark);
+  margin-bottom: 1rem;
+}
+.review-waiting {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+  font-style: italic;
+}
+
+@media (max-width: 860px) {
+  .first-review-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .review-placeholder-card { max-width: 100%; }
+}
