@@ -29,70 +29,66 @@
         <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
         <li><a href="partner.html" data-i18n="nav_partner">Partner With Us</a></li>
       </ul>
-
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
   `;
 
   // ─── FOOTER ────────────────────────────────────────────────────────────────
   const footerHTML = `
-  <footer class="site-footer">
-    <div class="container footer-grid">
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
 
-      <div class="footer-brand">
-        <a href="index.html" class="logo logo--light">
-          <div class="logo-mark">IL</div>
-          <div class="logo-text">
-            <span class="logo-name">Isoko Life</span>
-            <span class="logo-sub">Center Ltd</span>
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">IL</div>
+            <div>
+              <span class="footer-logo-name">Isoko Life</span>
+              <span class="footer-logo-sub">Center Ltd</span>
+            </div>
           </div>
-        </a>
-        <p data-i18n="footer_description">
-          Trusted wellness and beauty products for Rwanda — backed by certified health professionals.
-        </p>
+          <p class="footer-about" data-i18n="footer_description">
+            Trusted wellness and beauty products for Rwanda — backed by certified health professionals.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer_links">Quick Links</h5>
+          <ul>
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+            <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+            <li><a href="consultation.html" data-i18n="nav_consultation">Consultation</a></li>
+            <li><a href="partner.html" data-i18n="nav_partner">Partner With Us</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer_contact">Contact Us</h5>
+          <ul class="contact-list">
+            <li><i class="fas fa-map-marker-alt"></i><span>Remera Kanombe Kucyamitsingi KN5Road, Kigali, Rwanda</span></li>
+            <li><i class="fas fa-phone"></i><span><a href="tel:+250788333339" style="color:inherit;">+250 788 333 339</a></span></li>
+            <li><i class="fas fa-envelope"></i><span><a href="mailto:info@isokolifecenter.com" style="color:inherit;">info@isokolifecenter.com</a></span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer_newsletter">Newsletter</h5>
+          <div class="newsletter-form">
+            <p data-i18n="newsletter_description">Subscribe for health tips, product updates, and exclusive offers.</p>
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="your@email.com" data-i18n="placeholder_email" />
+              <button class="btn-subscribe" data-i18n="btn_subscribe">Subscribe</button>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="footer-col">
-        <h5 data-i18n="footer_links">Quick Links</h5>
-        <ul>
-          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-          <li><a href="products.html" data-i18n="nav_products">Products</a></li>
-          <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
-          <li><a href="consultation.html" data-i18n="nav_consultation">Consultation</a></li>
-          <li><a href="partner.html" data-i18n="nav_partner">Partner With Us</a></li>
-          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5 data-i18n="footer_contact">Contact Us</h5>
-        <ul class="footer-contact-list">
-          <li>Remera Kanombe Kucyamitsingi KN5Road, Kigali, Rwanda</li>
-          <li><a href="tel:+250788333339">+250 788 333 339</a></li>
-          <li><a href="mailto:info@isokolifecenter.com">info@isokolifecenter.com</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5 data-i18n="footer_newsletter">Newsletter</h5>
-        <p style="font-size:0.88rem; opacity:0.75; margin-bottom:12px;" data-i18n="newsletter_description">
-          Subscribe for health tips, product updates, and exclusive offers.
-        </p>
-        <form class="newsletter-form" onsubmit="return false;">
-          <input type="email" placeholder="your@email.com" data-i18n="placeholder_email" />
-          <button type="submit" data-i18n="btn_subscribe">Subscribe</button>
-        </form>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
+      <div class="footer-bottom">
         <p>&copy; <span id="footer-year"></span> Isoko Life Center Ltd. <span data-i18n="footer_rights">All rights reserved.</span></p>
-        <div class="footer-legal-links">
+        <div class="footer-legal">
           <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
           <a href="#" data-i18n="footer_terms">Terms of Service</a>
           <a href="#" data-i18n="footer_cookies">Cookie Policy</a>
@@ -103,8 +99,8 @@
   `;
 
   // ─── INJECT ──────────────────────────────────────────────────────────────────
-  const headerEl = document.getElementById('header-placeholder');
-  const footerEl = document.getElementById('footer-placeholder');
+  const headerEl = document.getElementById('site-header');
+  const footerEl = document.getElementById('site-footer');
 
   if (headerEl) headerEl.outerHTML = headerHTML;
   if (footerEl) footerEl.outerHTML = footerHTML;
@@ -124,5 +120,12 @@
   document.querySelectorAll('.nav-links a').forEach(link => {
     if (link.getAttribute('href') === currentPage) link.classList.add('nav-active');
   });
+
+  // ─── TRANSLATE after injection ───────────────────────────────────────────────
+  // Run translatePage now that header/footer are in the DOM
+  if (typeof translatePage === 'function') {
+    const savedLang = localStorage.getItem('isoko_lang') || 'en';
+    translatePage(savedLang, false);
+  }
 
 })();
