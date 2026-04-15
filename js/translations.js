@@ -131,6 +131,8 @@ const translations = {
     placeholder_email:"Your email address", btn_subscribe:"Subscribe",
     footer_rights:"All rights reserved.",
     footer_privacy:"Privacy Policy", footer_terms:"Terms of Service", footer_cookies:"Cookie Policy",
+    company_name: "Isoko Life",
+    company_tag: "Centre Ltée",
   },
 
   fr: {
@@ -245,6 +247,8 @@ const translations = {
     placeholder_email:"Votre adresse email", btn_subscribe:"S'abonner",
     footer_rights:"Tous droits réservés.",
     footer_privacy:"Politique de Confidentialité", footer_terms:"Conditions d'Utilisation", footer_cookies:"Politique des Cookies",
+    company_name: "Isoko Life",
+    company_tag: "Centre Ltée",
   },
 
   rw: {
@@ -359,5 +363,7 @@ const translations = {
     placeholder_email:"Aderesi yawe ya email", btn_subscribe:"Iyandikishe",
     footer_rights:"Amahoro yose ari yo.",
     footer_privacy:"Politiki yo kubika amakuru", footer_terms:"Amasezeranya yo gukoresha", footer_cookies:"Politiki ya Cookies",
+    company_name: "Isoko Life",
+    company_tag: "Centre Ltée",
   },
 };

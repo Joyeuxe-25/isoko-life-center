@@ -15,16 +15,16 @@ const HEADER_HTML = `
     <a href="index.html" class="logo">
       <div class="logo-mark">IL</div>
       <div class="logo-text">
-        <span class="logo-name">Isoko Life</span>
-        <span class="logo-sub">Center Ltd</span>
+        <span class="logo-name" data-i18n="company_name">Isoko Life</span>
+        <span class="logo-sub" data-i18n="company_tag">Center Ltd</span>
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html"        data-page="index">Home</a></li>
-      <li><a href="products.html"     data-page="products">Products</a></li>
-      <li><a href="consultation.html" data-page="consultation">Consultation</a></li>
-      <li><a href="contact.html"      data-page="contact">Contact</a></li>
-      <li><a href="partner.html"      data-page="partner">Partner With Us</a></li>
+      <li><a href="index.html"        data-page="index"        data-i18n="nav_home">Home</a></li>
+      <li><a href="products.html"     data-page="products"     data-i18n="nav_products">Products</a></li>
+      <li><a href="consultation.html" data-page="consultation" data-i18n="nav_consultation">Consultation</a></li>
+      <li><a href="contact.html"      data-page="contact"      data-i18n="nav_contact">Contact</a></li>
+      <li><a href="partner.html"      data-page="partner"      data-i18n="nav_partner">Partner With Us</a></li>
     </ul>
     <button class="menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
   </div>
@@ -38,8 +38,8 @@ const FOOTER_HTML = `
         <div class="footer-logo">
           <div class="footer-logo-mark">IL</div>
           <div>
-            <span class="footer-logo-name">Isoko Life</span>
-            <span class="footer-logo-sub">Center Ltd</span>
+            <span class="footer-logo-name" data-i18n="company_name">Isoko Life</span>
+            <span class="footer-logo-sub" data-i18n="company_tag">Center Ltd</span>
           </div>
         </div>
         <p class="footer-about" data-i18n="footer_description">Trusted wellness and beauty products for Rwanda — backed by certified health professionals.</p>
@@ -53,11 +53,11 @@ const FOOTER_HTML = `
       <div class="footer-col">
         <h5 data-i18n="footer_links">Quick Links</h5>
         <ul>
-          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-          <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+          <li><a href="index.html"        data-i18n="nav_home">Home</a></li>
+          <li><a href="products.html"     data-i18n="nav_products">Products</a></li>
           <li><a href="consultation.html" data-i18n="nav_consultation">Consultation</a></li>
-          <li><a href="partner.html" data-i18n="nav_partner">Partner With Us</a></li>
-          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+          <li><a href="partner.html"      data-i18n="nav_partner">Partner With Us</a></li>
+          <li><a href="contact.html"      data-i18n="nav_contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -136,7 +136,7 @@ function initComponents() {
     }, { passive: true });
   }
 
-  /* ── Apply saved language ── */
+  /* ── Apply saved language to everything including nav ── */
   const savedLang = localStorage.getItem('isoko_lang') || 'en';
   translatePage(savedLang, false);
 }
