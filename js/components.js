@@ -1,7 +1,7 @@
 /* ============================================================
    ISOKO LIFE CENTER — components.js
    Loads header.html and footer.html into every page.
-   Language buttons are wired HERE, after the header is injected.
+   Language buttons wired HERE after header is injected into DOM.
    ============================================================ */
 
 async function loadComponent(selector, file) {
@@ -30,7 +30,7 @@ async function initComponents() {
   const yr = document.getElementById('currentYear');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  /* ── Language buttons ── wired AFTER header is in the DOM ── */
+  /* ── Language buttons — wired AFTER header is in the DOM ── */
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = btn.dataset.lang;
@@ -40,13 +40,13 @@ async function initComponents() {
     });
   });
 
-  /* Apply saved language to newly injected header elements */
+  /* Apply saved language to newly injected header */
   const savedLang = localStorage.getItem('isoko_lang') || 'en';
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === savedLang);
   });
 
-  /* ── Mobile menu ── wired AFTER header is in the DOM ── */
+  /* ── Mobile menu — wired AFTER header is in the DOM ── */
   const toggle   = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
   if (toggle && navLinks) {
@@ -78,13 +78,13 @@ async function initComponents() {
 
   /* ── Login / Register buttons ── */
   document.querySelector('.btn-nav-login')?.addEventListener('click', () => {
-    const m = { en: 'Login page coming soon.', fr: 'Page de connexion bientôt disponible.', rw: 'Urupapuro rwo kwinjira ruzaza vuba.' };
     const lang = localStorage.getItem('isoko_lang') || 'en';
+    const m = { en: 'Login page coming soon.', fr: 'Page de connexion bientôt disponible.', rw: 'Urupapuro rwo kwinjira ruzaza vuba.' };
     showNotification(m[lang] || m.en, 'info');
   });
   document.querySelector('.btn-nav-register')?.addEventListener('click', () => {
-    const m = { en: 'Registration page coming soon.', fr: "Page d'inscription bientôt disponible.", rw: 'Urupapuro rwo kwiyandikisha ruzaza vuba.' };
     const lang = localStorage.getItem('isoko_lang') || 'en';
+    const m = { en: 'Registration page coming soon.', fr: "Page d'inscription bientôt disponible.", rw: 'Urupapuro rwo kwiyandikisha ruzaza vuba.' };
     showNotification(m[lang] || m.en, 'info');
   });
 }
