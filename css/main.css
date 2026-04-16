@@ -245,7 +245,7 @@ p { color: var(--ink-soft); }
   text-transform: uppercase;
 }
 
-/* ── NAV LINKS — desktop ── */
+/* ── NAV LINKS ── */
 .nav-links {
   display: flex;
   gap: 2.2rem;
@@ -276,7 +276,7 @@ p { color: var(--ink-soft); }
 .nav-links a.nav-active { color: var(--green); }
 .nav-links a.nav-active::after { right: 0; }
 
-/* ── MENU TOGGLE — hidden on desktop ── */
+/* ── MENU TOGGLE — hidden on desktop by default ── */
 .menu-toggle {
   display: none;
   background: none;
@@ -367,10 +367,10 @@ p { color: var(--ink-soft); }
 }
 .lang-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* ── DESKTOP — enforce nav visible, toggle hidden ── */
+/* ── DESKTOP — force nav visible, toggle hidden ── */
 @media (min-width: 969px) {
   .menu-toggle { display: none !important; }
-  .nav-links   { display: flex !important; }
+  .nav-links { display: flex !important; gap: 2.2rem; }
 }
 
 /* ── MOBILE ── */
@@ -388,7 +388,7 @@ p { color: var(--ink-soft); }
     width: min(300px, 82vw);
     background: var(--cream);
     border-left: 1px solid var(--cream-dark);
-    padding: 0;
+    padding-top: 64px;
     gap: 0;
     box-shadow: var(--shadow-lg);
     z-index: 99;
@@ -401,13 +401,6 @@ p { color: var(--ink-soft); }
     to   { transform: translateX(0); }
   }
 
-  .nav-links.open::before {
-    content: '';
-    display: block;
-    height: 64px;
-    flex-shrink: 0;
-  }
-
   .nav-links.open li {
     border-bottom: 1px solid var(--cream-dark);
   }
@@ -418,8 +411,8 @@ p { color: var(--ink-soft); }
 
   .nav-links.open a {
     display: block;
-    padding: 16px 28px;
-    font-size: 0.82rem;
+    padding: 18px 28px;
+    font-size: 0.88rem;
     letter-spacing: 0.1em;
     color: var(--ink-mid);
     transition: background var(--transition), color var(--transition);
@@ -439,13 +432,13 @@ p { color: var(--ink-soft); }
     justify-content: space-between;
     padding: 0 20px;
     height: 64px;
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
     right: 0;
+    width: min(300px, 82vw);
     background: var(--cream);
     border-bottom: 1px solid var(--cream-dark);
-    z-index: 1;
+    z-index: 100;
   }
   .mobile-menu-header span {
     font-size: 0.7rem;
