@@ -276,7 +276,7 @@ p { color: var(--ink-soft); }
 .nav-links a.nav-active { color: var(--green); }
 .nav-links a.nav-active::after { right: 0; }
 
-/* ── MENU TOGGLE — hidden on desktop by default ── */
+/* ── MENU TOGGLE ── */
 .menu-toggle {
   display: none;
   background: none;
@@ -316,6 +316,9 @@ p { color: var(--ink-soft); }
   -webkit-backdrop-filter: blur(2px);
 }
 .nav-overlay.visible { display: block; }
+
+/* ── MOBILE MENU DRAWER HEADER ── */
+.mobile-menu-header { display: none; }
 
 /* ── WHATSAPP ── */
 .whatsapp-btn {
@@ -367,15 +370,16 @@ p { color: var(--ink-soft); }
 }
 .lang-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* ── DESKTOP — force nav visible, toggle hidden ── */
+/* ── DESKTOP ── */
 @media (min-width: 969px) {
-  .menu-toggle { display: none !important; }
-  .nav-links { display: flex !important; gap: 2.2rem; }
+  .menu-toggle        { display: none !important; }
+  .mobile-menu-header { display: none !important; }
+  .nav-links          { display: flex !important; gap: 2.2rem; }
 }
 
 /* ── MOBILE ── */
 @media (max-width: 968px) {
-  .nav-links { display: none; }
+  .nav-links  { display: none; }
   .menu-toggle { display: flex; }
 
   .nav-links.open {

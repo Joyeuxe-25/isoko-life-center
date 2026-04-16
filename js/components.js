@@ -123,7 +123,6 @@
       if (link.getAttribute('href') === currentPage) link.classList.add('nav-active');
     });
 
-    // Init mobile menu after injection
     initMobileMenu();
 
     if (typeof translatePage === 'function') {
@@ -132,6 +131,7 @@
     }
   }
 
+  // ─── MOBILE MENU ─────────────────────────────────────────────────────────────
   function initMobileMenu() {
     const toggle   = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -155,13 +155,12 @@
     drawerHeader.querySelector('.mobile-menu-close').addEventListener('click', closeMobileMenu);
     overlay.addEventListener('click', closeMobileMenu);
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeMobileMenu();
-    });
-
-    // Close on nav link click
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMobileMenu();
     });
   }
 
