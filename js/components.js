@@ -35,6 +35,46 @@
       </button>
     </div>
   </nav>
+
+  <!-- Sidebar drawer for mobile -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <div class="logo-mark">IL</div>
+        <div class="logo-text">
+          <span class="logo-name">Isoko Life</span>
+          <span class="logo-sub">Center Ltd</span>
+        </div>
+      </a>
+      <button class="sidebar-close" id="sidebar-close">&#x2715;</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="sidebar-link" data-i18n="nav_home">
+        <i class="fas fa-home"></i><span>Home</span>
+      </a>
+      <a href="products.html" class="sidebar-link" data-i18n="nav_products">
+        <i class="fas fa-box-open"></i><span>Products</span>
+      </a>
+      <a href="about.html" class="sidebar-link" data-i18n="nav_about">
+        <i class="fas fa-info-circle"></i><span>About Us</span>
+      </a>
+      <a href="consultation.html" class="sidebar-link" data-i18n="nav_consultation">
+        <i class="fas fa-user-md"></i><span>Consultation</span>
+      </a>
+      <a href="contact.html" class="sidebar-link" data-i18n="nav_contact">
+        <i class="fas fa-envelope"></i><span>Contact</span>
+      </a>
+      <a href="partner.html" class="sidebar-link" data-i18n="nav_partner">
+        <i class="fas fa-handshake"></i><span>Partner With Us</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="https://wa.me/250788333339" target="_blank" class="sidebar-whatsapp">
+        <i class="fab fa-whatsapp"></i><span>Chat on WhatsApp</span>
+      </a>
+    </div>
+  </div>
   `;
 
   // ─── FOOTER ────────────────────────────────────────────────────────────────
@@ -118,12 +158,13 @@
       if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 10);
     });
 
+    // Mark active nav link in both navbar and sidebar
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    document.querySelectorAll('.nav-links a, .sidebar-link').forEach(link => {
       if (link.getAttribute('href') === currentPage) link.classList.add('nav-active');
     });
 
-    initMobileMenu();
+    initSidebar();
 
     if (typeof translatePage === 'function') {
       const savedLang = localStorage.getItem('isoko_lang') || 'en';
@@ -131,50 +172,38 @@
     }
   }
 
-  // ─── MOBILE MENU ─────────────────────────────────────────────────────────────
-  function initMobileMenu() {
-    const toggle   = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (!toggle || !navLinks) return;
+  // ─── SIDEBAR ─────────────────────────────────────────────────────────────────
+  function initSidebar() {
+    const toggle  = document.querySelector('.menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const close   = document.getElementById('sidebar-close');
+    if (!toggle || !sidebar) return;
 
-    // Inject drawer header
-    const drawerHeader = document.createElement('div');
-    drawerHeader.className = 'mobile-menu-header';
-    drawerHeader.innerHTML = `
-      <span>Menu</span>
-      <button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>
-    `;
-    navLinks.prepend(drawerHeader);
+    toggle.addEventListener('click', openSidebar);
+    close?.addEventListener('click', closeSidebar);
+    overlay?.addEventListener('click', closeSidebar);
 
-    // Inject overlay
-    const overlay = document.createElement('div');
-    overlay.className = 'nav-overlay';
-    document.body.appendChild(overlay);
-
-    toggle.addEventListener('click', openMobileMenu);
-    drawerHeader.querySelector('.mobile-menu-close').addEventListener('click', closeMobileMenu);
-    overlay.addEventListener('click', closeMobileMenu);
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
+    document.querySelectorAll('.sidebar-link').forEach(link => {
+      link.addEventListener('click', closeSidebar);
     });
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeMobileMenu();
+      if (e.key === 'Escape') closeSidebar();
     });
   }
 
-  function openMobileMenu() {
+  function openSidebar() {
+    document.getElementById('sidebar')?.classList.add('open');
+    document.getElementById('sidebar-overlay')?.classList.add('visible');
     document.querySelector('.menu-toggle')?.classList.add('open');
-    document.querySelector('.nav-links')?.classList.add('open');
-    document.querySelector('.nav-overlay')?.classList.add('visible');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeMobileMenu() {
+  function closeSidebar() {
+    document.getElementById('sidebar')?.classList.remove('open');
+    document.getElementById('sidebar-overlay')?.classList.remove('visible');
     document.querySelector('.menu-toggle')?.classList.remove('open');
-    document.querySelector('.nav-links')?.classList.remove('open');
-    document.querySelector('.nav-overlay')?.classList.remove('visible');
     document.body.style.overflow = '';
   }
 
