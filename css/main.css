@@ -317,7 +317,7 @@ p { color: var(--ink-soft); }
 }
 .nav-overlay.visible { display: block; }
 
-/* ── DRAWER HEADER — hidden everywhere by default ── */
+/* ── DRAWER HEADER — hidden by default ── */
 .mobile-menu-header { display: none; }
 
 /* ── WHATSAPP ── */
@@ -386,12 +386,13 @@ p { color: var(--ink-soft); }
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0;
+    top: 37px;
     right: 0;
     bottom: 0;
     width: min(300px, 82vw);
     background: var(--cream);
     border-left: 1px solid var(--cream-dark);
+    border-top: 1px solid var(--cream-dark);
     gap: 0;
     box-shadow: var(--shadow-lg);
     z-index: 99;
@@ -409,11 +410,11 @@ p { color: var(--ink-soft); }
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    height: 64px;
-    min-height: 64px;
+    height: 52px;
+    min-height: 52px;
     flex-shrink: 0;
-    background: var(--cream);
-    border-bottom: 1px solid var(--cream-dark);
+    background: var(--green);
+    border-bottom: 1px solid var(--green-mid);
     position: sticky;
     top: 0;
     z-index: 1;
@@ -422,27 +423,25 @@ p { color: var(--ink-soft); }
     font-size: 0.7rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ink-soft);
+    color: rgba(255,255,255,0.8);
     font-weight: 500;
   }
   .mobile-menu-close {
     background: none;
-    border: 1px solid var(--cream-dark);
+    border: 1px solid rgba(255,255,255,0.3);
     border-radius: var(--radius);
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: var(--ink-soft);
+    color: var(--white);
     font-size: 1rem;
     transition: var(--transition);
   }
   .mobile-menu-close:hover {
-    background: var(--green-wash);
-    border-color: var(--green-pale);
-    color: var(--green);
+    background: rgba(255,255,255,0.15);
   }
 
   .nav-links.open li {
