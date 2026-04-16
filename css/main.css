@@ -317,7 +317,7 @@ p { color: var(--ink-soft); }
 }
 .nav-overlay.visible { display: block; }
 
-/* ── MOBILE MENU DRAWER HEADER ── */
+/* ── DRAWER HEADER — hidden everywhere by default ── */
 .mobile-menu-header { display: none; }
 
 /* ── WHATSAPP ── */
@@ -379,7 +379,7 @@ p { color: var(--ink-soft); }
 
 /* ── MOBILE ── */
 @media (max-width: 968px) {
-  .nav-links  { display: none; }
+  .nav-links   { display: none; }
   .menu-toggle { display: flex; }
 
   .nav-links.open {
@@ -392,7 +392,6 @@ p { color: var(--ink-soft); }
     width: min(300px, 82vw);
     background: var(--cream);
     border-left: 1px solid var(--cream-dark);
-    padding-top: 64px;
     gap: 0;
     box-shadow: var(--shadow-lg);
     z-index: 99;
@@ -405,44 +404,19 @@ p { color: var(--ink-soft); }
     to   { transform: translateX(0); }
   }
 
-  .nav-links.open li {
-    border-bottom: 1px solid var(--cream-dark);
-  }
-
-  .nav-links.open li:first-child {
-    border-top: 1px solid var(--cream-dark);
-  }
-
-  .nav-links.open a {
-    display: block;
-    padding: 18px 28px;
-    font-size: 0.88rem;
-    letter-spacing: 0.1em;
-    color: var(--ink-mid);
-    transition: background var(--transition), color var(--transition);
-  }
-
-  .nav-links.open a:hover,
-  .nav-links.open a.nav-active {
-    background: var(--green-wash);
-    color: var(--green);
-  }
-
-  .nav-links.open a::after { display: none; }
-
   .mobile-menu-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     height: 64px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: min(300px, 82vw);
+    min-height: 64px;
+    flex-shrink: 0;
     background: var(--cream);
     border-bottom: 1px solid var(--cream-dark);
-    z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
   .mobile-menu-header span {
     font-size: 0.7rem;
@@ -470,6 +444,31 @@ p { color: var(--ink-soft); }
     border-color: var(--green-pale);
     color: var(--green);
   }
+
+  .nav-links.open li {
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .nav-links.open li:first-child {
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .nav-links.open a {
+    display: block;
+    padding: 18px 28px;
+    font-size: 0.88rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-mid);
+    transition: background var(--transition), color var(--transition);
+  }
+
+  .nav-links.open a:hover,
+  .nav-links.open a.nav-active {
+    background: var(--green-wash);
+    color: var(--green);
+  }
+
+  .nav-links.open a::after { display: none; }
 
   .section-header h2 { font-size: 2rem; }
 }
