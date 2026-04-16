@@ -100,8 +100,8 @@
 
   // ─── INJECT ──────────────────────────────────────────────────────────────────
   function injectComponents() {
-    const headerEl = document.getElementById('site-header');
-    const footerEl = document.getElementById('site-footer');
+    const headerEl = document.getElementById('header-placeholder');
+    const footerEl = document.getElementById('footer-placeholder');
 
     if (headerEl) headerEl.outerHTML = headerHTML;
     if (footerEl) footerEl.outerHTML = footerHTML;
