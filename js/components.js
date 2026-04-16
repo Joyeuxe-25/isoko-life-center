@@ -29,6 +29,10 @@
         <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
         <li><a href="partner.html" data-i18n="nav_partner">Partner With Us</a></li>
       </ul>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
   `;
@@ -119,10 +123,60 @@
       if (link.getAttribute('href') === currentPage) link.classList.add('nav-active');
     });
 
+    // Init mobile menu after injection
+    initMobileMenu();
+
     if (typeof translatePage === 'function') {
       const savedLang = localStorage.getItem('isoko_lang') || 'en';
       translatePage(savedLang, false);
     }
+  }
+
+  function initMobileMenu() {
+    const toggle   = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (!toggle || !navLinks) return;
+
+    // Inject drawer header
+    const drawerHeader = document.createElement('div');
+    drawerHeader.className = 'mobile-menu-header';
+    drawerHeader.innerHTML = `
+      <span>Menu</span>
+      <button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>
+    `;
+    navLinks.prepend(drawerHeader);
+
+    // Inject overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    toggle.addEventListener('click', openMobileMenu);
+    drawerHeader.querySelector('.mobile-menu-close').addEventListener('click', closeMobileMenu);
+    overlay.addEventListener('click', closeMobileMenu);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+
+    // Close on nav link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  }
+
+  function openMobileMenu() {
+    document.querySelector('.menu-toggle')?.classList.add('open');
+    document.querySelector('.nav-links')?.classList.add('open');
+    document.querySelector('.nav-overlay')?.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    document.querySelector('.menu-toggle')?.classList.remove('open');
+    document.querySelector('.nav-links')?.classList.remove('open');
+    document.querySelector('.nav-overlay')?.classList.remove('visible');
+    document.body.style.overflow = '';
   }
 
   if (document.readyState === 'loading') {
