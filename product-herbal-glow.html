@@ -33,14 +33,10 @@
     .product-highlights h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 1rem; font-weight: 500; }
     .highlight-item { display: flex; align-items: center; gap: 10px; margin-bottom: 0.7rem; font-size: 0.88rem; color: var(--ink-mid); }
     .highlight-item i { color: var(--green); font-size: 0.85rem; width: 16px; }
-    .qty-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .qty-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); font-weight: 500; }
-    .qty-control { display: flex; align-items: center; border: 1px solid var(--cream-dark); border-radius: var(--radius); overflow: hidden; }
-    .qty-btn { width: 38px; height: 38px; background: var(--cream); border: none; cursor: pointer; font-size: 1rem; color: var(--ink-mid); transition: var(--transition); }
-    .qty-btn:hover { background: var(--green-wash); color: var(--green); }
-    .qty-num { width: 44px; height: 38px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 500; color: var(--ink); border-left: 1px solid var(--cream-dark); border-right: 1px solid var(--cream-dark); }
-    .btn-add-large { width: 100%; background: var(--green); color: var(--white); border: none; padding: 15px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.07em; display: flex; align-items: center; justify-content: center; gap: 10px; transition: var(--transition); margin-bottom: 12px; }
-    .btn-add-large:hover { background: var(--green-mid); transform: translateY(-1px); }
+    .btn-enquire-large { width: 100%; background: var(--green); color: var(--white); border: none; padding: 15px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.07em; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.28s ease; margin-bottom: 12px; }
+    .btn-enquire-large:hover { background: var(--green-mid); transform: translateY(-1px); }
+    .btn-enquire-large.showing-whatsapp { background: #25D366; }
+    .btn-enquire-large.showing-whatsapp:hover { background: #1eab52; }
     .btn-consult-link { width: 100%; background: transparent; color: var(--green); border: 1px solid var(--green); padding: 13px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.88rem; letter-spacing: 0.06em; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: var(--transition); }
     .btn-consult-link:hover { background: var(--green-wash); }
     .product-tabs { margin-top: 4rem; border-top: 1px solid var(--cream-dark); padding-top: 3rem; }
@@ -63,170 +59,161 @@
   </style>
 </head>
 <body>
-
   <div id="header-placeholder"></div>
-
   <div class="container">
     <nav class="breadcrumb">
-      <a href="index.html">Home</a><span>/</span>
-      <a href="products.html">Products</a><span>/</span>
-      <strong>Herbal Glow Cream</strong>
+      <a href="index.html" data-i18n="breadcrumb_home">Home</a><span>/</span>
+      <a href="products.html" data-i18n="breadcrumb_products">Products</a><span>/</span>
+      <strong data-i18n="product2_name">Herbal Glow Cream</strong>
     </nav>
   </div>
-
   <section class="product-detail">
     <div class="container">
       <div class="product-detail-inner">
-
         <div class="product-visual">
           <div class="product-big-img"><i class="fas fa-spa"></i></div>
-          <span class="product-badge-large">New</span>
+          <span class="product-badge-large" data-i18n="product2_badge">New</span>
           <div class="product-thumbs">
             <div class="product-thumb active"><i class="fas fa-spa"></i></div>
             <div class="product-thumb"><i class="fas fa-leaf"></i></div>
             <div class="product-thumb"><i class="fas fa-star"></i></div>
           </div>
         </div>
-
         <div class="product-info">
-          <span class="product-cat-tag">Cosmetic</span>
-          <h1>Herbal Glow Cream</h1>
+          <span class="product-cat-tag" data-i18n="product2_cat">Cosmetic</span>
+          <h1 data-i18n="product2_name">Herbal Glow Cream</h1>
           <div class="product-rating-row">
             <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-            <span>4.6 rating</span>
+            <span>4.6 <span data-i18n="product_rating">rating</span></span>
           </div>
           <div class="product-price-row">
-            <span class="product-price-big">RWF 39,000</span>
+            <span class="product-price-big price" data-i18n="product2_price">RWF 39,000</span>
           </div>
-          <p class="product-desc">Herbal Glow Cream is a natural anti-aging facial cream formulated with plant-based ingredients to nourish, hydrate, and revitalize your skin. It helps reduce the appearance of fine lines while giving your skin a healthy, natural glow. Suitable for all skin types.</p>
-
+          <p class="product-desc" data-i18n="product2_detail_desc">Herbal Glow Cream is a natural anti-aging facial cream formulated with plant-based ingredients.</p>
           <div class="product-highlights">
-            <h4>Key Benefits</h4>
-            <div class="highlight-item"><i class="fas fa-check"></i> Reduces fine lines and signs of aging</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> Deep hydration and nourishment</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> Natural herbal ingredients</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> Suitable for all skin types</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> No harmful chemicals</div>
+            <h4 data-i18n="key_benefits">Key Benefits</h4>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product2_b1">Reduces fine lines and signs of aging</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product2_b2">Deep hydration and nourishment</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product2_b3">Natural herbal ingredients</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product2_b4">Suitable for all skin types</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product2_b5">No harmful chemicals</span></div>
           </div>
-
-          <div class="qty-row">
-            <span class="qty-label">Quantity</span>
-            <div class="qty-control">
-              <button class="qty-btn" onclick="changeQty(-1)">−</button>
-              <div class="qty-num" id="qty">1</div>
-              <button class="qty-btn" onclick="changeQty(1)">+</button>
-            </div>
-          </div>
-
-          <button class="btn-add-large" onclick="addToCart()">
-            <i class="fas fa-shopping-bag"></i> Add to Cart
+          <button class="btn-enquire-large" id="btn-enquire-main">
+            <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span>
           </button>
           <a href="consultation.html" class="btn-consult-link">
-            <i class="fas fa-user-md"></i> Ask a Health Professional
+            <i class="fas fa-user-md"></i> <span data-i18n="btn_ask_professional">Ask a Health Professional</span>
           </a>
         </div>
-
       </div>
-
       <div class="product-tabs">
         <div class="tab-nav">
-          <button class="tab-btn active" onclick="switchTab('details', this)">Product Details</button>
-          <button class="tab-btn" onclick="switchTab('ingredients', this)">Ingredients</button>
-          <button class="tab-btn" onclick="switchTab('usage', this)">How to Use</button>
-          <button class="tab-btn" onclick="switchTab('delivery', this)">Delivery</button>
+          <button class="tab-btn active" onclick="switchTab('details', this)" data-i18n="tab_details">Product Details</button>
+          <button class="tab-btn" onclick="switchTab('ingredients', this)" data-i18n="tab_ingredients">Ingredients</button>
+          <button class="tab-btn" onclick="switchTab('usage', this)" data-i18n="tab_usage">How to Use</button>
         </div>
-
         <div class="tab-panel active" id="tab-details">
-          <p>Herbal Glow Cream combines the power of natural plants and herbs to deliver visible skin improvement with regular use. It is carefully formulated without harsh chemicals, making it gentle enough for daily use.</p>
+          <p data-i18n="product2_details_p1">Herbal Glow Cream combines the power of natural plants and herbs for visible skin improvement.</p>
           <ul>
-            <li><i class="fas fa-info-circle"></i> Form: Cream — 50ml jar</li>
-            <li><i class="fas fa-info-circle"></i> Skin type: All skin types</li>
-            <li><i class="fas fa-info-circle"></i> Category: Cosmetic</li>
-            <li><i class="fas fa-info-circle"></i> Suitable for: Adults</li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product2_spec1">Form: Cream — 50ml jar</span></li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product2_spec2">Skin type: All skin types</span></li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product2_spec3">Category: Cosmetic</span></li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product2_spec4">Suitable for: Adults</span></li>
           </ul>
         </div>
-
         <div class="tab-panel" id="tab-ingredients">
-          <p>Formulated with natural plant extracts and nourishing oils. Free from parabens, artificial fragrances, and harsh chemicals.</p>
+          <p data-i18n="product2_ing_p">Formulated with natural plant extracts. Free from parabens and harsh chemicals.</p>
           <ul>
-            <li><i class="fas fa-leaf"></i> Aloe vera extract</li>
-            <li><i class="fas fa-leaf"></i> Shea butter</li>
-            <li><i class="fas fa-leaf"></i> Rosehip oil</li>
-            <li><i class="fas fa-leaf"></i> Green tea extract</li>
-            <li><i class="fas fa-leaf"></i> Vitamin E</li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product2_ing1">Aloe vera extract</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product2_ing2">Shea butter</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product2_ing3">Rosehip oil</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product2_ing4">Green tea extract</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product2_ing5">Vitamin E</span></li>
           </ul>
         </div>
-
         <div class="tab-panel" id="tab-usage">
-          <p>Apply a small amount to clean, dry skin morning and evening. Gently massage in circular motions until fully absorbed. Use regularly for best results.</p>
-          <p>Avoid contact with eyes. If irritation occurs, discontinue use. Store in a cool, dry place.</p>
-        </div>
-
-        <div class="tab-panel" id="tab-delivery">
-          <p>We deliver across Rwanda. Orders are processed within 24 hours and delivered within 2–4 business days.</p>
-          <ul>
-            <li><i class="fas fa-truck"></i> Free delivery on all orders</li>
-            <li><i class="fas fa-undo"></i> 30-day money back guarantee</li>
-            <li><i class="fas fa-phone"></i> Call us on +250 788 333 339 to track your order</li>
-            <li><i class="fas fa-mobile-alt"></i> Or dial *123# from your phone</li>
-          </ul>
+          <p data-i18n="product2_usage_p1">Apply a small amount to clean, dry skin morning and evening.</p>
+          <p data-i18n="product2_usage_p2">Avoid contact with eyes. If irritation occurs, discontinue use.</p>
         </div>
       </div>
     </div>
   </section>
-
   <section class="related-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">You May Also Like</span>
-        <h2>Related Products</h2>
+        <span class="section-tag" data-i18n="related_tag">You May Also Like</span>
+        <h2 data-i18n="related_title">Related Products</h2>
       </div>
       <div class="product-grid">
         <div class="product-card">
-          <span class="product-badge badge-bestseller">Best Seller</span>
+          <span class="product-badge badge-bestseller" data-i18n="product1_badge">Best Seller</span>
           <div class="product-img product-img-1"><i class="fas fa-capsules"></i></div>
           <div class="product-body">
-            <span class="product-cat">Supplement</span><h3>Immune Booster Pro</h3><p>Advanced formula for immune system support</p>
-            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span></div><span class="price">RWF 55,000</span></div>
-            <a href="product-immune-booster.html" class="btn-cart"><i class="fas fa-eye"></i> View Product</a>
+            <span class="product-cat" data-i18n="product1_cat">Supplement</span>
+            <h3 data-i18n="product1_name">Immune Booster Pro</h3>
+            <p data-i18n="product1_desc">Advanced formula for immune system support</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span></div><span class="price" data-i18n="product1_price">RWF 55,000</span></div>
+            <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
         <div class="product-card">
-          <span class="product-badge badge-premium">Premium</span>
+          <span class="product-badge badge-premium" data-i18n="product3_badge">Premium</span>
           <div class="product-img product-img-3"><i class="fas fa-bolt"></i></div>
           <div class="product-body">
-            <span class="product-cat">Supplement</span><h3>Energy Vitality Capsules</h3><p>Sustained energy and vitality support</p>
-            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div><span class="price">RWF 67,000</span></div>
-            <a href="product-energy-vitality.html" class="btn-cart"><i class="fas fa-eye"></i> View Product</a>
+            <span class="product-cat" data-i18n="product3_cat">Supplement</span>
+            <h3 data-i18n="product3_name">Energy Vitality Capsules</h3>
+            <p data-i18n="product3_desc">Sustained energy and vitality support</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div><span class="price" data-i18n="product3_price">RWF 67,000</span></div>
+            <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
         <div class="product-card">
-          <span class="product-badge badge-popular">Popular</span>
+          <span class="product-badge badge-popular" data-i18n="product4_badge">Popular</span>
           <div class="product-img product-img-4"><i class="fas fa-hands"></i></div>
           <div class="product-body">
-            <span class="product-cat">Wellness</span><h3>Wellness Massage Oil</h3><p>Therapeutic massage oil blend</p>
-            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.7</span></div><span class="price">RWF 33,000</span></div>
-            <a href="product-massage-oil.html" class="btn-cart"><i class="fas fa-eye"></i> View Product</a>
+            <span class="product-cat" data-i18n="product4_cat">Wellness</span>
+            <h3 data-i18n="product4_name">Wellness Massage Oil</h3>
+            <p data-i18n="product4_desc">Therapeutic massage oil blend</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.7</span></div><span class="price" data-i18n="product4_price">RWF 33,000</span></div>
+            <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
       </div>
     </div>
   </section>
-
   <div id="footer-placeholder"></div>
   <script src="js/translations.js"></script>
-<script src="js/components.js"></script>
-<script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
   <script>
-    let qty = 1;
-    function changeQty(n) { qty = Math.max(1, qty + n); document.getElementById('qty').textContent = qty; }
-    function addToCart() { showNotification(`${qty}x Herbal Glow Cream added to cart!`, 'success'); }
     function switchTab(id, btn) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.getElementById('tab-' + id).classList.add('active');
       btn.classList.add('active');
     }
+    document.getElementById('btn-enquire-main').addEventListener('click', function () {
+      const btn = this;
+      if (btn.classList.contains('showing-whatsapp')) { window.open(btn.dataset.waUrl, '_blank'); return; }
+      const lang = localStorage.getItem('isoko_lang') || 'en';
+      const t = translations[lang] || translations.en;
+      const name = t.product2_name || 'Herbal Glow Cream';
+      const price = t.product2_price || 'RWF 39,000';
+      const messages = {
+        en: `Hello! I'm interested in *${name}* (${price}). Could you provide more details?`,
+        fr: `Bonjour! Je suis intéressé(e) par *${name}* (${price}). Pouvez-vous me donner plus de détails?`,
+        rw: `Muraho! Ndashaka kumenya byinshi kuri *${name}* (${price}). Mwambwira byinshi?`,
+      };
+      const waUrl = `https://wa.me/250788333339?text=${encodeURIComponent(messages[lang] || messages.en)}`;
+      btn.dataset.waUrl = waUrl;
+      btn.classList.add('showing-whatsapp');
+      btn.innerHTML = `<i class="fab fa-whatsapp"></i> <span>${t.btn_chat_whatsapp || 'Chat on WhatsApp'}</span>`;
+      setTimeout(() => {
+        btn.classList.remove('showing-whatsapp');
+        delete btn.dataset.waUrl;
+        btn.innerHTML = `<i class="fas fa-shopping-bag"></i> <span>${t.btn_enquire_now || 'Enquire Now'}</span>`;
+      }, 6000);
+    });
   </script>
 </body>
 </html>

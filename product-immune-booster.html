@@ -16,124 +16,32 @@
     .product-detail { padding: 60px 0 90px; background: var(--white); }
     .product-detail-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .product-visual { position: relative; }
-    .product-big-img {
-      height: 420px;
-      background: linear-gradient(145deg, #5A8A60, #3A5C3E);
-      border-radius: var(--radius-lg);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 6rem;
-      color: rgba(255,255,255,0.85);
-    }
-    .product-badge-large {
-      position: absolute;
-      top: 20px; left: 20px;
-      background: var(--ink);
-      color: var(--white);
-      padding: 6px 16px;
-      border-radius: 3px;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
+    .product-big-img { height: 420px; background: linear-gradient(145deg, #5A8A60, #3A5C3E); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 6rem; color: rgba(255,255,255,0.85); }
+    .product-badge-large { position: absolute; top: 20px; left: 20px; background: var(--ink); color: var(--white); padding: 6px 16px; border-radius: 3px; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; }
     .product-thumbs { display: flex; gap: 10px; margin-top: 14px; }
-    .product-thumb {
-      width: 72px; height: 72px;
-      background: linear-gradient(145deg, #5A8A60, #3A5C3E);
-      border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem;
-      color: rgba(255,255,255,0.8);
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: var(--transition);
-      opacity: 0.6;
-    }
+    .product-thumb { width: 72px; height: 72px; background: linear-gradient(145deg, #5A8A60, #3A5C3E); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: rgba(255,255,255,0.8); cursor: pointer; border: 2px solid transparent; transition: var(--transition); opacity: 0.6; }
     .product-thumb.active { border-color: var(--green); opacity: 1; }
-
     .product-info h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
-    .product-info .product-cat-tag {
-      display: inline-block;
-      background: var(--green-wash);
-      color: var(--green);
-      border: 1px solid var(--green-pale);
-      padding: 4px 14px;
-      border-radius: 40px;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
+    .product-cat-tag { display: inline-block; background: var(--green-wash); color: var(--green); border: 1px solid var(--green-pale); padding: 4px 14px; border-radius: 40px; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; }
     .product-rating-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
     .product-rating-row .rating { color: var(--gold); font-size: 0.9rem; display: flex; align-items: center; gap: 3px; }
     .product-rating-row span { font-size: 0.85rem; color: var(--ink-soft); }
     .product-price-row { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; }
     .product-price-big { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--ink); }
     .product-desc { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 2rem; }
-
     .product-highlights { margin-bottom: 2rem; }
     .product-highlights h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 1rem; font-weight: 500; }
     .highlight-item { display: flex; align-items: center; gap: 10px; margin-bottom: 0.7rem; font-size: 0.88rem; color: var(--ink-mid); }
     .highlight-item i { color: var(--green); font-size: 0.85rem; width: 16px; }
-
-    .qty-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .qty-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); font-weight: 500; }
-    .qty-control { display: flex; align-items: center; border: 1px solid var(--cream-dark); border-radius: var(--radius); overflow: hidden; }
-    .qty-btn { width: 38px; height: 38px; background: var(--cream); border: none; cursor: pointer; font-size: 1rem; color: var(--ink-mid); transition: var(--transition); }
-    .qty-btn:hover { background: var(--green-wash); color: var(--green); }
-    .qty-num { width: 44px; height: 38px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 500; color: var(--ink); border-left: 1px solid var(--cream-dark); border-right: 1px solid var(--cream-dark); }
-
-    .btn-add-large {
-      width: 100%;
-      background: var(--green);
-      color: var(--white);
-      border: none;
-      padding: 15px;
-      border-radius: var(--radius);
-      cursor: pointer;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.07em;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      transition: var(--transition);
-      margin-bottom: 12px;
-    }
-    .btn-add-large:hover { background: var(--green-mid); transform: translateY(-1px); }
-    .btn-consult-link {
-      width: 100%;
-      background: transparent;
-      color: var(--green);
-      border: 1px solid var(--green);
-      padding: 13px;
-      border-radius: var(--radius);
-      cursor: pointer;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.88rem;
-      letter-spacing: 0.06em;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      text-decoration: none;
-      transition: var(--transition);
-    }
+    .btn-enquire-large { width: 100%; background: var(--green); color: var(--white); border: none; padding: 15px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.07em; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.28s ease; margin-bottom: 12px; }
+    .btn-enquire-large:hover { background: var(--green-mid); transform: translateY(-1px); }
+    .btn-enquire-large.showing-whatsapp { background: #25D366; }
+    .btn-enquire-large.showing-whatsapp:hover { background: #1eab52; }
+    .btn-consult-link { width: 100%; background: transparent; color: var(--green); border: 1px solid var(--green); padding: 13px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.88rem; letter-spacing: 0.06em; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: var(--transition); }
     .btn-consult-link:hover { background: var(--green-wash); }
-
     .product-tabs { margin-top: 4rem; border-top: 1px solid var(--cream-dark); padding-top: 3rem; }
     .tab-nav { display: flex; gap: 0; margin-bottom: 2rem; border-bottom: 1px solid var(--cream-dark); }
-    .tab-btn {
-      padding: 10px 24px;
-      background: none;
-      border: none;
-      border-bottom: 2px solid transparent;
-      cursor: pointer;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      transition: var(--transition);
-      margin-bottom: -1px;
-    }
+    .tab-btn { padding: 10px 24px; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); transition: var(--transition); margin-bottom: -1px; }
     .tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
@@ -141,218 +49,172 @@
     .tab-panel ul { list-style: none; padding: 0; }
     .tab-panel ul li { font-size: 0.92rem; color: var(--ink-soft); padding: 8px 0; border-bottom: 1px solid var(--cream-dark); display: flex; gap: 10px; }
     .tab-panel ul li i { color: var(--green); margin-top: 2px; flex-shrink: 0; }
-
     .related-section { padding: 60px 0 90px; background: var(--cream); }
-
-    .breadcrumb { padding: 16px 0; margin-bottom: 0; }
+    .breadcrumb { padding: 16px 0; }
     .breadcrumb a { color: var(--ink-soft); text-decoration: none; font-size: 0.82rem; }
     .breadcrumb a:hover { color: var(--green); }
     .breadcrumb span { color: var(--ink-soft); font-size: 0.82rem; margin: 0 8px; }
     .breadcrumb strong { font-size: 0.82rem; color: var(--ink-mid); font-weight: 400; }
-
     @media (max-width: 860px) { .product-detail-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
   </style>
 </head>
 <body>
-
   <div id="header-placeholder"></div>
-
   <div class="container">
     <nav class="breadcrumb">
-      <a href="index.html">Home</a>
-      <span>/</span>
-      <a href="products.html">Products</a>
-      <span>/</span>
-      <strong>Immune Booster Pro</strong>
+      <a href="index.html" data-i18n="breadcrumb_home">Home</a><span>/</span>
+      <a href="products.html" data-i18n="breadcrumb_products">Products</a><span>/</span>
+      <strong data-i18n="product1_name">Immune Booster Pro</strong>
     </nav>
   </div>
-
   <section class="product-detail">
     <div class="container">
       <div class="product-detail-inner">
-
-        <!-- Left: Visual -->
         <div class="product-visual">
-          <div class="product-big-img">
-            <i class="fas fa-capsules"></i>
-          </div>
-          <span class="product-badge-large">Best Seller</span>
+          <div class="product-big-img"><i class="fas fa-capsules"></i></div>
+          <span class="product-badge-large" data-i18n="product1_badge">Best Seller</span>
           <div class="product-thumbs">
             <div class="product-thumb active"><i class="fas fa-capsules"></i></div>
             <div class="product-thumb"><i class="fas fa-leaf"></i></div>
             <div class="product-thumb"><i class="fas fa-shield-alt"></i></div>
           </div>
         </div>
-
-        <!-- Right: Info -->
         <div class="product-info">
-          <span class="product-cat-tag">Supplement</span>
-          <h1>Immune Booster Pro</h1>
+          <span class="product-cat-tag" data-i18n="product1_cat">Supplement</span>
+          <h1 data-i18n="product1_name">Immune Booster Pro</h1>
           <div class="product-rating-row">
-            <div class="rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-            </div>
-            <span>4.8 rating</span>
+            <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+            <span>4.8 <span data-i18n="product_rating">rating</span></span>
           </div>
           <div class="product-price-row">
-            <span class="product-price-big">RWF 55,000</span>
+            <span class="product-price-big price" data-i18n="product1_price">RWF 55,000</span>
           </div>
-          <p class="product-desc">
-            Immune Booster Pro is an advanced formula designed to strengthen and support your immune system naturally. Made from carefully selected herbal ingredients, it helps your body defend itself against everyday health challenges. Suitable for daily use by adults.
-          </p>
-
+          <p class="product-desc" data-i18n="product1_detail_desc">Immune Booster Pro is an advanced formula designed to strengthen and support your immune system naturally.</p>
           <div class="product-highlights">
-            <h4>Key Benefits</h4>
-            <div class="highlight-item"><i class="fas fa-check"></i> Supports and strengthens the immune system</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> Made from natural herbal ingredients</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> Suitable for daily use</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> No artificial preservatives</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> Certified quality standard</div>
+            <h4 data-i18n="key_benefits">Key Benefits</h4>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product1_b1">Supports and strengthens the immune system</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product1_b2">Made from natural herbal ingredients</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product1_b3">Suitable for daily use</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product1_b4">No artificial preservatives</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product1_b5">Certified quality standard</span></div>
           </div>
-
-          <div class="qty-row">
-            <span class="qty-label">Quantity</span>
-            <div class="qty-control">
-              <button class="qty-btn" onclick="changeQty(-1)">−</button>
-              <div class="qty-num" id="qty">1</div>
-              <button class="qty-btn" onclick="changeQty(1)">+</button>
-            </div>
-          </div>
-
-          <button class="btn-add-large" onclick="addToCart()">
-            <i class="fas fa-shopping-bag"></i> Add to Cart
+          <button class="btn-enquire-large" id="btn-enquire-main">
+            <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span>
           </button>
           <a href="consultation.html" class="btn-consult-link">
-            <i class="fas fa-user-md"></i> Ask a Health Professional
+            <i class="fas fa-user-md"></i> <span data-i18n="btn_ask_professional">Ask a Health Professional</span>
           </a>
         </div>
-
       </div>
-
-      <!-- Tabs -->
       <div class="product-tabs">
         <div class="tab-nav">
-          <button class="tab-btn active" onclick="switchTab('details', this)">Product Details</button>
-          <button class="tab-btn" onclick="switchTab('ingredients', this)">Ingredients</button>
-          <button class="tab-btn" onclick="switchTab('usage', this)">How to Use</button>
-          <button class="tab-btn" onclick="switchTab('delivery', this)">Delivery</button>
+          <button class="tab-btn active" onclick="switchTab('details', this)" data-i18n="tab_details">Product Details</button>
+          <button class="tab-btn" onclick="switchTab('ingredients', this)" data-i18n="tab_ingredients">Ingredients</button>
+          <button class="tab-btn" onclick="switchTab('usage', this)" data-i18n="tab_usage">How to Use</button>
         </div>
-
         <div class="tab-panel active" id="tab-details">
-          <p>Immune Booster Pro is formulated with a blend of natural herbs and vitamins that work together to enhance your body's natural defences. Each capsule contains a concentrated dose of immune-supporting nutrients.</p>
-          <p>This product is produced under strict quality control standards and is free from artificial additives, making it safe for regular use as part of a healthy lifestyle.</p>
+          <p data-i18n="product1_details_p1">Immune Booster Pro is formulated with a blend of natural herbs and vitamins that work together to enhance your body's natural defences.</p>
+          <p data-i18n="product1_details_p2">This product is produced under strict quality control standards and is free from artificial additives.</p>
           <ul>
-            <li><i class="fas fa-info-circle"></i> Form: Capsules</li>
-            <li><i class="fas fa-info-circle"></i> Pack size: 30 capsules</li>
-            <li><i class="fas fa-info-circle"></i> Category: Supplement</li>
-            <li><i class="fas fa-info-circle"></i> Suitable for: Adults 18+</li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product1_spec1">Form: Capsules</span></li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product1_spec2">Pack size: 30 capsules</span></li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product1_spec3">Category: Supplement</span></li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product1_spec4">Suitable for: Adults 18+</span></li>
           </ul>
         </div>
-
         <div class="tab-panel" id="tab-ingredients">
-          <p>Made from a carefully selected blend of natural and herbal ingredients with no artificial preservatives or additives.</p>
+          <p data-i18n="product1_ing_p">Made from a carefully selected blend of natural and herbal ingredients with no artificial preservatives or additives.</p>
           <ul>
-            <li><i class="fas fa-leaf"></i> Echinacea extract</li>
-            <li><i class="fas fa-leaf"></i> Vitamin C</li>
-            <li><i class="fas fa-leaf"></i> Zinc</li>
-            <li><i class="fas fa-leaf"></i> Ginger root extract</li>
-            <li><i class="fas fa-leaf"></i> Turmeric extract</li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product1_ing1">Echinacea extract</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product1_ing2">Vitamin C</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product1_ing3">Zinc</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product1_ing4">Ginger root extract</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product1_ing5">Turmeric extract</span></li>
           </ul>
         </div>
-
         <div class="tab-panel" id="tab-usage">
-          <p>Take 1 capsule daily with a glass of water, preferably with a meal. Do not exceed the recommended daily dose.</p>
-          <p>Store in a cool, dry place away from direct sunlight. Keep out of reach of children. Consult a healthcare professional before use if you are pregnant, breastfeeding, or taking medication.</p>
-        </div>
-
-        <div class="tab-panel" id="tab-delivery">
-          <p>We deliver across Rwanda. Orders are processed within 24 hours and delivered within 2–4 business days depending on your location.</p>
-          <ul>
-            <li><i class="fas fa-truck"></i> Free delivery on all orders</li>
-            <li><i class="fas fa-undo"></i> 30-day money back guarantee</li>
-            <li><i class="fas fa-phone"></i> Call us on +250 788 333 339 to track your order</li>
-            <li><i class="fas fa-mobile-alt"></i> Or dial *123# from your phone</li>
-          </ul>
+          <p data-i18n="product1_usage_p1">Take 1 capsule daily with a glass of water, preferably with a meal. Do not exceed the recommended daily dose.</p>
+          <p data-i18n="product1_usage_p2">Store in a cool, dry place away from direct sunlight. Keep out of reach of children.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Related products -->
   <section class="related-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">You May Also Like</span>
-        <h2>Related Products</h2>
+        <span class="section-tag" data-i18n="related_tag">You May Also Like</span>
+        <h2 data-i18n="related_title">Related Products</h2>
       </div>
       <div class="product-grid">
         <div class="product-card">
-          <span class="product-badge badge-new">New</span>
+          <span class="product-badge badge-new" data-i18n="product2_badge">New</span>
           <div class="product-img product-img-2"><i class="fas fa-spa"></i></div>
           <div class="product-body">
-            <span class="product-cat">Cosmetic</span>
-            <h3>Herbal Glow Cream</h3>
-            <p>Natural anti-aging facial cream</p>
-            <div class="product-meta">
-              <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span></div>
-              <span class="price">RWF 39,000</span>
-            </div>
-            <a href="product-herbal-glow.html" class="btn-cart"><i class="fas fa-eye"></i> View Product</a>
+            <span class="product-cat" data-i18n="product2_cat">Cosmetic</span>
+            <h3 data-i18n="product2_name">Herbal Glow Cream</h3>
+            <p data-i18n="product2_desc">Natural anti-aging facial cream</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span></div><span class="price" data-i18n="product2_price">RWF 39,000</span></div>
+            <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
         <div class="product-card">
-          <span class="product-badge badge-premium">Premium</span>
+          <span class="product-badge badge-premium" data-i18n="product3_badge">Premium</span>
           <div class="product-img product-img-3"><i class="fas fa-bolt"></i></div>
           <div class="product-body">
-            <span class="product-cat">Supplement</span>
-            <h3>Energy Vitality Capsules</h3>
-            <p>Sustained energy and vitality support</p>
-            <div class="product-meta">
-              <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div>
-              <span class="price">RWF 67,000</span>
-            </div>
-            <a href="product-energy-vitality.html" class="btn-cart"><i class="fas fa-eye"></i> View Product</a>
+            <span class="product-cat" data-i18n="product3_cat">Supplement</span>
+            <h3 data-i18n="product3_name">Energy Vitality Capsules</h3>
+            <p data-i18n="product3_desc">Sustained energy and vitality support</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div><span class="price" data-i18n="product3_price">RWF 67,000</span></div>
+            <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
         <div class="product-card">
-          <span class="product-badge badge-popular">Popular</span>
+          <span class="product-badge badge-popular" data-i18n="product4_badge">Popular</span>
           <div class="product-img product-img-4"><i class="fas fa-hands"></i></div>
           <div class="product-body">
-            <span class="product-cat">Wellness</span>
-            <h3>Wellness Massage Oil</h3>
-            <p>Therapeutic massage oil blend</p>
-            <div class="product-meta">
-              <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.7</span></div>
-              <span class="price">RWF 33,000</span>
-            </div>
-            <a href="product-massage-oil.html" class="btn-cart"><i class="fas fa-eye"></i> View Product</a>
+            <span class="product-cat" data-i18n="product4_cat">Wellness</span>
+            <h3 data-i18n="product4_name">Wellness Massage Oil</h3>
+            <p data-i18n="product4_desc">Therapeutic massage oil blend</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.7</span></div><span class="price" data-i18n="product4_price">RWF 33,000</span></div>
+            <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
       </div>
     </div>
   </section>
-
   <div id="footer-placeholder"></div>
-
   <script src="js/translations.js"></script>
-<script src="js/components.js"></script>
-<script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
   <script>
-    let qty = 1;
-    function changeQty(n) {
-      qty = Math.max(1, qty + n);
-      document.getElementById('qty').textContent = qty;
-    }
-    function addToCart() {
-      showNotification(`${qty}x Immune Booster Pro added to cart!`, 'success');
-    }
     function switchTab(id, btn) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.getElementById('tab-' + id).classList.add('active');
       btn.classList.add('active');
     }
+    document.getElementById('btn-enquire-main').addEventListener('click', function () {
+      const btn = this;
+      if (btn.classList.contains('showing-whatsapp')) { window.open(btn.dataset.waUrl, '_blank'); return; }
+      const lang = localStorage.getItem('isoko_lang') || 'en';
+      const t = translations[lang] || translations.en;
+      const name = t.product1_name || 'Immune Booster Pro';
+      const price = t.product1_price || 'RWF 55,000';
+      const messages = {
+        en: `Hello! I'm interested in *${name}* (${price}). Could you provide more details?`,
+        fr: `Bonjour! Je suis intéressé(e) par *${name}* (${price}). Pouvez-vous me donner plus de détails?`,
+        rw: `Muraho! Ndashaka kumenya byinshi kuri *${name}* (${price}). Mwambwira byinshi?`,
+      };
+      const waUrl = `https://wa.me/250788333339?text=${encodeURIComponent(messages[lang] || messages.en)}`;
+      btn.dataset.waUrl = waUrl;
+      btn.classList.add('showing-whatsapp');
+      btn.innerHTML = `<i class="fab fa-whatsapp"></i> <span>${t.btn_chat_whatsapp || 'Chat on WhatsApp'}</span>`;
+      setTimeout(() => {
+        btn.classList.remove('showing-whatsapp');
+        delete btn.dataset.waUrl;
+        btn.innerHTML = `<i class="fas fa-shopping-bag"></i> <span>${t.btn_enquire_now || 'Enquire Now'}</span>`;
+      }, 6000);
+    });
   </script>
 </body>
 </html>

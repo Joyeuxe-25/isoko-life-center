@@ -11,8 +11,7 @@ let sloganTimer = null;
 
 document.addEventListener('DOMContentLoaded', () => {
   startSloganRotation();
-  initCart();
-  initUssd();
+  initEnquiry();
   initSmoothScroll();
 });
 
@@ -55,7 +54,7 @@ function translatePage(lang, showToast = true) {
   if (showToast) showLangToast(lang);
 }
 
-/* ── SET LANG (called from topbar buttons) ── */
+/* ── SET LANG ── */
 function setLang(lang) {
   translatePage(lang, true);
 }
@@ -117,41 +116,44 @@ function initSmoothScroll() {
   });
 }
 
-/* ── ADD TO CART ── */
-function initCart() {
+/* ── PRODUCT ENQUIRY ── */
+function initEnquiry() {
   document.addEventListener('click', function (e) {
-    const btn = e.target.closest('.btn-cart');
+    const btn = e.target.closest('.btn-enquire');
     if (!btn) return;
-    const card = btn.closest('.product-card');
-    const name = card?.querySelector('h3')?.textContent || '';
-    const messages = {
-      en: `"${name}" added to cart!`,
-      fr: `"${name}" ajouté au panier !`,
-      rw: `"${name}" yongewe mu biguzwe!`,
-    };
-    const original = btn.innerHTML;
-    btn.classList.add('added');
-    btn.innerHTML = '<i class="fas fa-check"></i> <span>' +
-      (currentLang === 'fr' ? 'Ajouté!' : currentLang === 'rw' ? 'Yashyizweho!' : 'Added!') +
-      '</span>';
-    setTimeout(() => {
-      btn.innerHTML = original;
-      btn.classList.remove('added');
-    }, 2200);
-    showNotification(messages[currentLang] || messages.en, 'success');
-  });
-}
 
-/* ── USSD ── */
-function initUssd() {
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.btn-ussd')) return;
+    // If already showing WhatsApp, open it directly
+    if (btn.classList.contains('showing-whatsapp')) {
+      const url = btn.dataset.waUrl;
+      if (url) window.open(url, '_blank');
+      return;
+    }
+
+    const card  = btn.closest('.product-card, .product-detail');
+    const name  = card?.querySelector('h3, h1')?.textContent?.trim() || 'a product';
+    const price = card?.querySelector('.price')?.textContent?.trim() || '';
+
     const messages = {
-      en: 'Dial *123# on your phone to access Isoko Life Center services.',
-      fr: 'Composez *123# sur votre téléphone pour accéder aux services.',
-      rw: 'Kanda *123# kuri telefoni yawe kugirango ugere ku serivisi.',
+      en: `Hello! I'm interested in *${name}*${price ? ' (' + price + ')' : ''}. Could you provide more details?`,
+      fr: `Bonjour! Je suis intéressé(e) par *${name}*${price ? ' (' + price + ')' : ''}. Pouvez-vous me donner plus de détails?`,
+      rw: `Muraho! Ndashaka kumenya byinshi kuri *${name}*${price ? ' (' + price + ')' : ''}. Mwambwira byinshi?`,
     };
-    showNotification(messages[currentLang] || messages.en, 'info');
+
+    const message = encodeURIComponent(messages[currentLang] || messages.en);
+    const waUrl   = `https://wa.me/250788333339?text=${message}`;
+
+    // Store URL on button and transform it
+    btn.dataset.waUrl = waUrl;
+    btn.classList.add('showing-whatsapp');
+    btn.innerHTML = `<i class="fab fa-whatsapp"></i> <span data-i18n="btn_chat_whatsapp">Chat on WhatsApp</span>`;
+
+    // Reset after 6 seconds
+    setTimeout(() => {
+      btn.classList.remove('showing-whatsapp');
+      delete btn.dataset.waUrl;
+      const t = translations[currentLang];
+      btn.innerHTML = `<i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire">${t?.btn_enquire || 'Enquire Now'}</span>`;
+    }, 6000);
   });
 }
 

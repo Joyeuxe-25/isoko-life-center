@@ -33,14 +33,10 @@
     .product-highlights h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 1rem; font-weight: 500; }
     .highlight-item { display: flex; align-items: center; gap: 10px; margin-bottom: 0.7rem; font-size: 0.88rem; color: var(--ink-mid); }
     .highlight-item i { color: var(--green); font-size: 0.85rem; width: 16px; }
-    .qty-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .qty-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); font-weight: 500; }
-    .qty-control { display: flex; align-items: center; border: 1px solid var(--cream-dark); border-radius: var(--radius); overflow: hidden; }
-    .qty-btn { width: 38px; height: 38px; background: var(--cream); border: none; cursor: pointer; font-size: 1rem; color: var(--ink-mid); transition: var(--transition); }
-    .qty-btn:hover { background: var(--green-wash); color: var(--green); }
-    .qty-num { width: 44px; height: 38px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 500; color: var(--ink); border-left: 1px solid var(--cream-dark); border-right: 1px solid var(--cream-dark); }
-    .btn-add-large { width: 100%; background: var(--green); color: var(--white); border: none; padding: 15px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.07em; display: flex; align-items: center; justify-content: center; gap: 10px; transition: var(--transition); margin-bottom: 12px; }
-    .btn-add-large:hover { background: var(--green-mid); transform: translateY(-1px); }
+    .btn-enquire-large { width: 100%; background: var(--green); color: var(--white); border: none; padding: 15px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.07em; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.28s ease; margin-bottom: 12px; }
+    .btn-enquire-large:hover { background: var(--green-mid); transform: translateY(-1px); }
+    .btn-enquire-large.showing-whatsapp { background: #25D366; }
+    .btn-enquire-large.showing-whatsapp:hover { background: #1eab52; }
     .btn-consult-link { width: 100%; background: transparent; color: var(--green); border: 1px solid var(--green); padding: 13px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.88rem; letter-spacing: 0.06em; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: var(--transition); }
     .btn-consult-link:hover { background: var(--green-wash); }
     .product-tabs { margin-top: 4rem; border-top: 1px solid var(--cream-dark); padding-top: 3rem; }
@@ -63,170 +59,161 @@
   </style>
 </head>
 <body>
-
   <div id="header-placeholder"></div>
-
   <div class="container">
     <nav class="breadcrumb">
-      <a href="index.html">Home</a><span>/</span>
-      <a href="products.html">Products</a><span>/</span>
-      <strong>Wellness Massage Oil</strong>
+      <a href="index.html" data-i18n="breadcrumb_home">Home</a><span>/</span>
+      <a href="products.html" data-i18n="breadcrumb_products">Products</a><span>/</span>
+      <strong data-i18n="product4_name">Wellness Massage Oil</strong>
     </nav>
   </div>
-
   <section class="product-detail">
     <div class="container">
       <div class="product-detail-inner">
-
         <div class="product-visual">
           <div class="product-big-img"><i class="fas fa-hands"></i></div>
-          <span class="product-badge-large">Popular</span>
+          <span class="product-badge-large" data-i18n="product4_badge">Popular</span>
           <div class="product-thumbs">
             <div class="product-thumb active"><i class="fas fa-hands"></i></div>
             <div class="product-thumb"><i class="fas fa-leaf"></i></div>
             <div class="product-thumb"><i class="fas fa-spa"></i></div>
           </div>
         </div>
-
         <div class="product-info">
-          <span class="product-cat-tag">Wellness</span>
-          <h1>Wellness Massage Oil</h1>
+          <span class="product-cat-tag" data-i18n="product4_cat">Wellness</span>
+          <h1 data-i18n="product4_name">Wellness Massage Oil</h1>
           <div class="product-rating-row">
             <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-            <span>4.7 rating</span>
+            <span>4.7 <span data-i18n="product_rating">rating</span></span>
           </div>
           <div class="product-price-row">
-            <span class="product-price-big">RWF 33,000</span>
+            <span class="product-price-big price" data-i18n="product4_price">RWF 33,000</span>
           </div>
-          <p class="product-desc">Wellness Massage Oil is a therapeutic blend of natural oils carefully formulated to relax muscles, relieve tension, and nourish the skin. Whether used for self-care or professional massage, this oil provides a calming sensory experience while delivering deep skin nourishment. Suitable for all body types.</p>
-
+          <p class="product-desc" data-i18n="product4_detail_desc">Wellness Massage Oil is a therapeutic blend of natural oils carefully formulated to relax muscles, relieve tension, and nourish the skin.</p>
           <div class="product-highlights">
-            <h4>Key Benefits</h4>
-            <div class="highlight-item"><i class="fas fa-check"></i> Relieves muscle tension and soreness</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> Deep skin nourishment and hydration</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> Calming and relaxing aromatherapy</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> 100% natural oil blend</div>
-            <div class="highlight-item"><i class="fas fa-check"></i> Suitable for all body types</div>
+            <h4 data-i18n="key_benefits">Key Benefits</h4>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b1">Relieves muscle tension and soreness</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b2">Deep skin nourishment and hydration</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b3">Calming and relaxing aromatherapy</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b4">100% natural oil blend</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b5">Suitable for all body types</span></div>
           </div>
-
-          <div class="qty-row">
-            <span class="qty-label">Quantity</span>
-            <div class="qty-control">
-              <button class="qty-btn" onclick="changeQty(-1)">−</button>
-              <div class="qty-num" id="qty">1</div>
-              <button class="qty-btn" onclick="changeQty(1)">+</button>
-            </div>
-          </div>
-
-          <button class="btn-add-large" onclick="addToCart()">
-            <i class="fas fa-shopping-bag"></i> Add to Cart
+          <button class="btn-enquire-large" id="btn-enquire-main">
+            <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span>
           </button>
           <a href="consultation.html" class="btn-consult-link">
-            <i class="fas fa-user-md"></i> Ask a Health Professional
+            <i class="fas fa-user-md"></i> <span data-i18n="btn_ask_professional">Ask a Health Professional</span>
           </a>
         </div>
-
       </div>
-
       <div class="product-tabs">
         <div class="tab-nav">
-          <button class="tab-btn active" onclick="switchTab('details', this)">Product Details</button>
-          <button class="tab-btn" onclick="switchTab('ingredients', this)">Ingredients</button>
-          <button class="tab-btn" onclick="switchTab('usage', this)">How to Use</button>
-          <button class="tab-btn" onclick="switchTab('delivery', this)">Delivery</button>
+          <button class="tab-btn active" onclick="switchTab('details', this)" data-i18n="tab_details">Product Details</button>
+          <button class="tab-btn" onclick="switchTab('ingredients', this)" data-i18n="tab_ingredients">Ingredients</button>
+          <button class="tab-btn" onclick="switchTab('usage', this)" data-i18n="tab_usage">How to Use</button>
         </div>
-
         <div class="tab-panel active" id="tab-details">
-          <p>Wellness Massage Oil is a carefully crafted blend of therapeutic oils sourced from natural plants. It is lightweight, absorbs well into the skin, and leaves no greasy residue. Perfect for relaxation massages, muscle recovery, and daily skin care.</p>
+          <p data-i18n="product4_details_p1">Wellness Massage Oil is a carefully crafted blend of therapeutic oils. Lightweight, absorbs well, and leaves no greasy residue.</p>
           <ul>
-            <li><i class="fas fa-info-circle"></i> Form: Oil — 100ml bottle</li>
-            <li><i class="fas fa-info-circle"></i> Scent: Light herbal and floral</li>
-            <li><i class="fas fa-info-circle"></i> Category: Wellness</li>
-            <li><i class="fas fa-info-circle"></i> Suitable for: All body types</li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product4_spec1">Form: Oil — 100ml bottle</span></li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product4_spec2">Scent: Light herbal and floral</span></li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product4_spec3">Category: Wellness</span></li>
+            <li><i class="fas fa-info-circle"></i> <span data-i18n="product4_spec4">Suitable for: All body types</span></li>
           </ul>
         </div>
-
         <div class="tab-panel" id="tab-ingredients">
-          <p>A blend of 100% natural plant oils with no artificial fragrances or synthetic additives.</p>
+          <p data-i18n="product4_ing_p">A blend of 100% natural plant oils with no artificial fragrances.</p>
           <ul>
-            <li><i class="fas fa-leaf"></i> Sweet almond oil</li>
-            <li><i class="fas fa-leaf"></i> Lavender essential oil</li>
-            <li><i class="fas fa-leaf"></i> Eucalyptus oil</li>
-            <li><i class="fas fa-leaf"></i> Jojoba oil</li>
-            <li><i class="fas fa-leaf"></i> Vitamin E oil</li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product4_ing1">Sweet almond oil</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product4_ing2">Lavender essential oil</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product4_ing3">Eucalyptus oil</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product4_ing4">Jojoba oil</span></li>
+            <li><i class="fas fa-leaf"></i> <span data-i18n="product4_ing5">Vitamin E oil</span></li>
           </ul>
         </div>
-
         <div class="tab-panel" id="tab-usage">
-          <p>Warm a small amount between your palms and apply to the desired area. Use gentle circular motions for relaxation or firmer strokes for muscle relief. Can be used daily.</p>
-          <p>For external use only. Avoid contact with eyes. Do a patch test before first use if you have sensitive skin.</p>
-        </div>
-
-        <div class="tab-panel" id="tab-delivery">
-          <p>We deliver across Rwanda. Orders are processed within 24 hours and delivered within 2–4 business days.</p>
-          <ul>
-            <li><i class="fas fa-truck"></i> Free delivery on all orders</li>
-            <li><i class="fas fa-undo"></i> 30-day money back guarantee</li>
-            <li><i class="fas fa-phone"></i> Call us on +250 788 333 339 to track your order</li>
-            <li><i class="fas fa-mobile-alt"></i> Or dial *123# from your phone</li>
-          </ul>
+          <p data-i18n="product4_usage_p1">Warm a small amount between your palms and apply to the desired area.</p>
+          <p data-i18n="product4_usage_p2">For external use only. Avoid contact with eyes. Do a patch test before first use if you have sensitive skin.</p>
         </div>
       </div>
     </div>
   </section>
-
   <section class="related-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">You May Also Like</span>
-        <h2>Related Products</h2>
+        <span class="section-tag" data-i18n="related_tag">You May Also Like</span>
+        <h2 data-i18n="related_title">Related Products</h2>
       </div>
       <div class="product-grid">
         <div class="product-card">
-          <span class="product-badge badge-bestseller">Best Seller</span>
+          <span class="product-badge badge-bestseller" data-i18n="product1_badge">Best Seller</span>
           <div class="product-img product-img-1"><i class="fas fa-capsules"></i></div>
           <div class="product-body">
-            <span class="product-cat">Supplement</span><h3>Immune Booster Pro</h3><p>Advanced formula for immune system support</p>
-            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span></div><span class="price">RWF 55,000</span></div>
-            <a href="product-immune-booster.html" class="btn-cart"><i class="fas fa-eye"></i> View Product</a>
+            <span class="product-cat" data-i18n="product1_cat">Supplement</span>
+            <h3 data-i18n="product1_name">Immune Booster Pro</h3>
+            <p data-i18n="product1_desc">Advanced formula for immune system support</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span></div><span class="price" data-i18n="product1_price">RWF 55,000</span></div>
+            <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
         <div class="product-card">
-          <span class="product-badge badge-new">New</span>
+          <span class="product-badge badge-new" data-i18n="product2_badge">New</span>
           <div class="product-img product-img-2"><i class="fas fa-spa"></i></div>
           <div class="product-body">
-            <span class="product-cat">Cosmetic</span><h3>Herbal Glow Cream</h3><p>Natural anti-aging facial cream</p>
-            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span></div><span class="price">RWF 39,000</span></div>
-            <a href="product-herbal-glow.html" class="btn-cart"><i class="fas fa-eye"></i> View Product</a>
+            <span class="product-cat" data-i18n="product2_cat">Cosmetic</span>
+            <h3 data-i18n="product2_name">Herbal Glow Cream</h3>
+            <p data-i18n="product2_desc">Natural anti-aging facial cream</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span></div><span class="price" data-i18n="product2_price">RWF 39,000</span></div>
+            <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
         <div class="product-card">
-          <span class="product-badge badge-premium">Premium</span>
+          <span class="product-badge badge-premium" data-i18n="product3_badge">Premium</span>
           <div class="product-img product-img-3"><i class="fas fa-bolt"></i></div>
           <div class="product-body">
-            <span class="product-cat">Supplement</span><h3>Energy Vitality Capsules</h3><p>Sustained energy and vitality support</p>
-            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div><span class="price">RWF 67,000</span></div>
-            <a href="product-energy-vitality.html" class="btn-cart"><i class="fas fa-eye"></i> View Product</a>
+            <span class="product-cat" data-i18n="product3_cat">Supplement</span>
+            <h3 data-i18n="product3_name">Energy Vitality Capsules</h3>
+            <p data-i18n="product3_desc">Sustained energy and vitality support</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div><span class="price" data-i18n="product3_price">RWF 67,000</span></div>
+            <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
       </div>
     </div>
   </section>
-
   <div id="footer-placeholder"></div>
   <script src="js/translations.js"></script>
-<script src="js/components.js"></script>
-<script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
   <script>
-    let qty = 1;
-    function changeQty(n) { qty = Math.max(1, qty + n); document.getElementById('qty').textContent = qty; }
-    function addToCart() { showNotification(`${qty}x Wellness Massage Oil added to cart!`, 'success'); }
     function switchTab(id, btn) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.getElementById('tab-' + id).classList.add('active');
       btn.classList.add('active');
     }
+    document.getElementById('btn-enquire-main').addEventListener('click', function () {
+      const btn = this;
+      if (btn.classList.contains('showing-whatsapp')) { window.open(btn.dataset.waUrl, '_blank'); return; }
+      const lang = localStorage.getItem('isoko_lang') || 'en';
+      const t = translations[lang] || translations.en;
+      const name = t.product4_name || 'Wellness Massage Oil';
+      const price = t.product4_price || 'RWF 33,000';
+      const messages = {
+        en: `Hello! I'm interested in *${name}* (${price}). Could you provide more details?`,
+        fr: `Bonjour! Je suis intéressé(e) par *${name}* (${price}). Pouvez-vous me donner plus de détails?`,
+        rw: `Muraho! Ndashaka kumenya byinshi kuri *${name}* (${price}). Mwambwira byinshi?`,
+      };
+      const waUrl = `https://wa.me/250788333339?text=${encodeURIComponent(messages[lang] || messages.en)}`;
+      btn.dataset.waUrl = waUrl;
+      btn.classList.add('showing-whatsapp');
+      btn.innerHTML = `<i class="fab fa-whatsapp"></i> <span>${t.btn_chat_whatsapp || 'Chat on WhatsApp'}</span>`;
+      setTimeout(() => {
+        btn.classList.remove('showing-whatsapp');
+        delete btn.dataset.waUrl;
+        btn.innerHTML = `<i class="fas fa-shopping-bag"></i> <span>${t.btn_enquire_now || 'Enquire Now'}</span>`;
+      }, 6000);
+    });
   </script>
 </body>
 </html>
