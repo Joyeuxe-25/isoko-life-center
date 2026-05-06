@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Registration | Isoko Life Center</title>
+  <meta name="description" content="Authorized employee registration placeholder for Isoko Life Center staff." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="employee-auth-page">
+      <div class="container">
+        <div class="employee-auth-card">
+          <div class="employee-auth-brand">
+            <img src="assets/images/logo/logo.jpeg" alt="Isoko Life Center logo" />
+            <span data-i18n="employee_staff_portal">Staff Portal</span>
+          </div>
+          <span class="section-tag" data-i18n="employee_authorized_only">Authorized Staff Only</span>
+          <h1 data-i18n="employee_register_title">Employee Registration</h1>
+          <p data-i18n="employee_register_intro">For authorized Isoko Life Center staff only.</p>
+          <p data-i18n="employee_register_approval">Registration requires approval from the administrator.</p>
+          <p class="employee-auth-notice" data-i18n="employee_placeholder_notice">This page is a front-end placeholder until secure employee authentication is connected.</p>
+
+          <form class="employee-auth-form" onsubmit="handleEmployeeRegister(event)" autocomplete="off">
+            <div class="form-group">
+              <label for="employee-register-name" data-i18n="employee_label_full_names">Full names</label>
+              <input id="employee-register-name" name="employee-register-name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-group">
+              <label for="employee-register-email" data-i18n="label_email">Email Address</label>
+              <input id="employee-register-email" name="employee-register-email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-group">
+              <label for="employee-register-phone" data-i18n="label_phone">Phone Number</label>
+              <input id="employee-register-phone" name="employee-register-phone" type="tel" autocomplete="tel" required />
+            </div>
+            <div class="form-group">
+              <label for="employee-register-password" data-i18n="employee_label_password">Password</label>
+              <input id="employee-register-password" name="employee-register-password" type="password" autocomplete="new-password" required />
+            </div>
+            <button type="submit" class="btn-form">
+              <i class="fas fa-user-lock"></i>
+              <span data-i18n="employee_btn_request_registration">Request Registration</span>
+            </button>
+          </form>
+
+          <div class="employee-auth-links">
+            <a href="employee-login.html" data-i18n="employee_register_login_link">Already authorized? Sign in</a>
+            <a href="contact.html" data-i18n="employee_contact_admin">Contact admin</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/translations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function handleEmployeeRegister(e) {
+      e.preventDefault();
+      const lang = localStorage.getItem('isoko_lang') || 'en';
+      const message = translations[lang]?.employee_register_alert || translations.en.employee_register_alert;
+      alert(message);
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>

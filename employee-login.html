@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Login | Isoko Life Center</title>
+  <meta name="description" content="Employee-only login placeholder for authorized Isoko Life Center staff." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="employee-auth-page">
+      <div class="container">
+        <div class="employee-auth-card">
+          <div class="employee-auth-brand">
+            <img src="assets/images/logo/logo.jpeg" alt="Isoko Life Center logo" />
+            <span data-i18n="employee_staff_portal">Staff Portal</span>
+          </div>
+          <span class="section-tag" data-i18n="employee_authorized_only">Authorized Staff Only</span>
+          <h1 data-i18n="employee_login_title">Employee Login</h1>
+          <p data-i18n="employee_login_intro">For authorized Isoko Life Center staff only.</p>
+          <p class="employee-auth-notice" data-i18n="employee_placeholder_notice">This page is a front-end placeholder until secure employee authentication is connected.</p>
+
+          <form class="employee-auth-form" onsubmit="handleEmployeeLogin(event)" autocomplete="off">
+            <div class="form-group">
+              <label for="employee-login-id" data-i18n="employee_label_login_id">Email or phone number</label>
+              <input id="employee-login-id" name="employee-login-id" type="text" autocomplete="username" required />
+            </div>
+            <div class="form-group">
+              <label for="employee-login-password" data-i18n="employee_label_password">Password</label>
+              <input id="employee-login-password" name="employee-login-password" type="password" autocomplete="current-password" required />
+            </div>
+            <button type="submit" class="btn-form">
+              <i class="fas fa-lock"></i>
+              <span data-i18n="employee_btn_sign_in">Sign In</span>
+            </button>
+          </form>
+
+          <div class="employee-auth-links">
+            <a href="employee-register.html" data-i18n="employee_login_register_link">Authorized employee registration</a>
+            <a href="contact.html" data-i18n="employee_contact_admin">Contact admin</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/translations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function handleEmployeeLogin(e) {
+      e.preventDefault();
+      const lang = localStorage.getItem('isoko_lang') || 'en';
+      const message = translations[lang]?.employee_login_alert || translations.en.employee_login_alert;
+      alert(message);
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>

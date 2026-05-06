@@ -9,6 +9,15 @@ let slogans     = [];
 let sloganIndex = 0;
 let sloganTimer = null;
 
+const ISOKO_CONTACT_FALLBACK = Object.freeze({
+  businessName: 'Isoko Life Center',
+  legalName: 'Isoko Life Center Ltd',
+  email: 'info@isokolifecenter.com',
+  phoneDisplay: '+250 788 333 339',
+  phoneTel: '+250788333339',
+  whatsappNumber: '250788333339',
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   startSloganRotation();
   initEnquiry();
@@ -116,10 +125,19 @@ function initSmoothScroll() {
   });
 }
 
+function getIsokoContacts() {
+  return window.ISOKO_CONTACTS || ISOKO_CONTACT_FALLBACK;
+}
+
+function createWhatsAppUrl(message) {
+  const contacts = getIsokoContacts();
+  return `https://wa.me/${contacts.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
 /* ── PRODUCT ENQUIRY ── */
 function initEnquiry() {
   document.addEventListener('click', function (e) {
-    const btn = e.target.closest('.btn-enquire');
+    const btn = e.target.closest('.btn-enquire, .btn-enquire-large');
     if (!btn) return;
 
     // If already showing WhatsApp, open it directly
@@ -131,18 +149,14 @@ function initEnquiry() {
 
     const card  = btn.closest('.product-card, .product-detail');
     const name  = card?.querySelector('h3, h1')?.textContent?.trim() || 'a product';
-    const price = card?.querySelector('.price')?.textContent?.trim() || '';
-
-    const messages = {
-      en: `Hello! I'm interested in *${name}*${price ? ' (' + price + ')' : ''}. Could you provide more details?`,
-      fr: `Bonjour! Je suis intéressé(e) par *${name}*${price ? ' (' + price + ')' : ''}. Pouvez-vous me donner plus de détails?`,
-      rw: `Muraho! Ndashaka kumenya byinshi kuri *${name}*${price ? ' (' + price + ')' : ''}. Mwambwira byinshi?`,
-    };
-
-    const message = encodeURIComponent(messages[currentLang] || messages.en);
-    const waUrl   = `https://wa.me/250788333339?text=${message}`;
+    const contacts = getIsokoContacts();
+    const message = card
+      ? `Hello ${contacts.businessName}, I would like to enquire about ${name}.`
+      : `Hello ${contacts.businessName}, I would like more information about your services.`;
+    const waUrl = createWhatsAppUrl(message);
 
     // Store URL on button and transform it
+    btn.dataset.originalHtml = btn.innerHTML;
     btn.dataset.waUrl = waUrl;
     btn.classList.add('showing-whatsapp');
     btn.innerHTML = `<i class="fab fa-whatsapp"></i> <span data-i18n="btn_chat_whatsapp">Chat on WhatsApp</span>`;
@@ -151,8 +165,8 @@ function initEnquiry() {
     setTimeout(() => {
       btn.classList.remove('showing-whatsapp');
       delete btn.dataset.waUrl;
-      const t = translations[currentLang];
-      btn.innerHTML = `<i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire">${t?.btn_enquire || 'Enquire Now'}</span>`;
+      btn.innerHTML = btn.dataset.originalHtml || `<i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire">Enquire Now</span>`;
+      delete btn.dataset.originalHtml;
     }, 6000);
   });
 }

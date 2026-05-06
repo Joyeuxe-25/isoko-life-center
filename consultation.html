@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Consultation | Isoko Life Center</title>
-  <meta name="description" content="Book a consultation with certified health professionals at Isoko Life Center." />
+  <title>Wellness Consultations | Isoko Life Center</title>
+  <meta name="description" content="Book a wellness consultation with Isoko Life Center for natural wellness guidance, bodywork recommendations, counseling support, lifestyle guidance, and referrals when needed." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -12,183 +12,206 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/sections.css" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <style>
-    .page-hero { background: linear-gradient(135deg, var(--green-wash) 0%, var(--cream) 100%); padding: 60px 0 48px; text-align: center; border-bottom: 1px solid var(--cream-dark); }
-    .page-hero h1 { font-size: 2.8rem; margin-bottom: 0.8rem; }
-    .page-hero p  { font-size: 1rem; color: var(--ink-soft); max-width: 520px; margin: 0 auto; }
-    .consult-section { padding: 80px 0; background: var(--white); }
-    .booking-section { padding: 80px 0; background: var(--cream); }
-    .booking-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .booking-info h2 { font-size: 2.2rem; margin-bottom: 1rem; }
-    .booking-info > p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1.5rem; }
-    .booking-steps { margin-top: 2rem; }
-    .booking-step { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
-    .step-num { width: 36px; height: 36px; background: var(--green); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 500; flex-shrink: 0; }
-    .step-body h4 { font-size: 0.9rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
-    .step-body p  { font-size: 0.82rem; color: var(--ink-soft); margin: 0; line-height: 1.6; }
-    .call-box { margin-top: 2rem; padding: 1.5rem; background: var(--green-wash); border: 1px solid var(--green-pale); border-radius: var(--radius-lg); }
-    .call-box p { margin: 0; font-size: 0.85rem; color: var(--ink-mid); }
-    .call-box i { color: var(--green); margin-right: 8px; }
-    .booking-form { background: var(--white); border: 1px solid var(--cream-dark); border-radius: var(--radius-lg); padding: 2.5rem; }
-    .booking-form h3 { font-size: 1.5rem; margin-bottom: 1.8rem; }
-    .form-group { margin-bottom: 1.2rem; }
-    .form-group label { display: block; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); font-weight: 500; margin-bottom: 0.5rem; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 11px 14px; border: 1px solid var(--cream-dark); border-radius: var(--radius); background: var(--cream); font-family: 'Jost', sans-serif; font-size: 0.88rem; color: var(--ink); outline: none; transition: border-color var(--transition); }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green); background: var(--white); }
-    .form-group textarea { height: 100px; resize: vertical; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .btn-form { width: 100%; background: var(--green); color: var(--white); border: none; padding: 13px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.07em; margin-top: 0.5rem; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .btn-form:hover { background: var(--green-mid); }
-    @media (max-width: 860px) { .booking-inner { grid-template-columns: 1fr; gap: 2.5rem; } .form-row { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
 
   <div id="header-placeholder"></div>
 
-  <div class="page-hero">
-    <div class="container">
-      <span class="section-tag" data-i18n="consult_tag">Expert Support</span>
-      <h1 data-i18n="consult_page_title">Wellness Guidance From Certified Professionals</h1>
-      <p data-i18n="consult_page_subtitle">Our health professionals help you find the right products and wellness plan for your personal needs.</p>
-    </div>
-  </div>
-
-  <section class="consult-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-i18n="services_tag">Our Services</span>
-        <h2 data-i18n="services_heading">What We Offer</h2>
-        <p data-i18n="services_heading_sub">Choose the service that suits your needs. All consultations are with certified professionals.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon icon-massage"><i class="fas fa-spa"></i></div>
-          <h3 data-i18n="service1_title">Massage Therapy</h3>
-          <p data-i18n="service1_desc">Professional therapeutic massage services for relaxation and healing</p>
-          <a href="#book" class="service-link"><span data-i18n="btn_book">Book Now</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon icon-doctor"><i class="fas fa-user-md"></i></div>
-          <h3 data-i18n="service2_title">Doctor Consultation</h3>
-          <p data-i18n="service2_desc">Book appointments with certified healthcare professionals</p>
-          <a href="#book" class="service-link"><span data-i18n="btn_book">Book Now</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon icon-nutrition"><i class="fas fa-apple-alt"></i></div>
-          <h3 data-i18n="service3_title">Nutrition Support</h3>
-          <p data-i18n="service3_desc">Personalized nutrition plans and dietary guidance</p>
-          <a href="#book" class="service-link"><span data-i18n="btn_book">Book Now</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon icon-wellness"><i class="fas fa-users"></i></div>
-          <h3 data-i18n="service4_title">Wellness Programs</h3>
-          <p data-i18n="service4_desc">Comprehensive wellness programs for holistic health</p>
-          <a href="#book" class="service-link"><span data-i18n="btn_book">Book Now</span> <i class="fas fa-arrow-right"></i></a>
+  <main>
+    <section class="consultation-page-hero">
+      <div class="container">
+        <span class="section-tag" data-i18n="consult_hero_tag">Wellness Consultation</span>
+        <h1 data-i18n="consult_page_title">Wellness Consultations &amp; Guidance</h1>
+        <p data-i18n="consult_page_subtitle">Speak with the Isoko Life Center team for natural wellness guidance, lifestyle support, bodywork recommendations, counseling support, and referrals when needed.</p>
+        <div class="consult-hero-actions">
+          <a href="#book" class="btn-primary">
+            <i class="fas fa-calendar-check"></i>
+            <span data-i18n="consult_hero_cta">Book a Consultation</span>
+          </a>
+          <a href="tel:+250788333339" class="btn-secondary">
+            <i class="fas fa-phone"></i>
+            <span>+250 788 333 339</span>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="book" class="booking-section">
-    <div class="container">
-      <div class="booking-inner">
-        <div class="booking-info">
-          <span class="section-tag" data-i18n="booking_tag">Book Appointment</span>
-          <h2 data-i18n="booking_title">Ready to Start Your Wellness Journey?</h2>
-          <p data-i18n="booking_desc">Fill in the form and one of our certified professionals will contact you to confirm your appointment.</p>
-          <div class="booking-steps">
-            <div class="booking-step">
-              <div class="step-num">1</div>
-              <div class="step-body">
-                <h4 data-i18n="step1_title">Fill in your details</h4>
-                <p data-i18n="step1_desc">Tell us your name, contact, and the service you need.</p>
-              </div>
-            </div>
-            <div class="booking-step">
-              <div class="step-num">2</div>
-              <div class="step-body">
-                <h4 data-i18n="step2_title">We confirm your slot</h4>
-                <p data-i18n="step2_desc">Our team will call or WhatsApp you within 24 hours.</p>
-              </div>
-            </div>
-            <div class="booking-step">
-              <div class="step-num">3</div>
-              <div class="step-body">
-                <h4 data-i18n="step3_title">Attend your session</h4>
-                <p data-i18n="step3_desc">Visit us at Remera, Kanombe Kucyamitsingi KN5Road.</p>
-              </div>
+    <section class="consultation-intro">
+      <div class="container">
+        <div class="consult-intro-grid">
+          <div>
+            <span class="section-tag" data-i18n="consult_intro_tag">How Consultations Help</span>
+            <h2 data-i18n="consult_intro_heading">Understand Your Needs and Choose Responsible Support</h2>
+            <p data-i18n="consult_intro_p1">A wellness consultation gives you time to explain your concern, ask questions, and understand support options that may fit your situation.</p>
+            <p data-i18n="consult_intro_p2">The Isoko Life Center team listens, advises, and may recommend herbal wellness guidance, massage or reflexology, nutrition and lifestyle guidance, counseling support, or referral to specialists when needed.</p>
+            <div class="consult-safety-note">
+              <i class="fas fa-circle-info"></i>
+              <p data-i18n="consult_safety_note">Isoko Life Center provides wellness guidance and support. For urgent, severe, or complex medical conditions, clients may be advised to contact qualified medical providers or specialists.</p>
             </div>
           </div>
-          <div class="call-box">
-            <p><i class="fas fa-phone"></i> <span data-i18n="call_prompt">Prefer to call? Reach us at</span> <strong>+250 788 333 339</strong></p>
-          </div>
-        </div>
-        <div class="booking-form">
-          <h3 data-i18n="form_book_title">Book an Appointment</h3>
-          <form onsubmit="handleBooking(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label data-i18n="label_firstname">First Name</label>
-                <input type="text" data-i18n="placeholder_firstname" placeholder="Your first name" required />
-              </div>
-              <div class="form-group">
-                <label data-i18n="label_lastname">Last Name</label>
-                <input type="text" data-i18n="placeholder_lastname" placeholder="Your last name" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label data-i18n="label_phone">Phone Number</label>
-              <input type="tel" placeholder="+250 7XX XXX XXX" required />
-            </div>
-            <div class="form-group">
-              <label data-i18n="label_email">Email Address</label>
-              <input type="email" data-i18n="placeholder_email" placeholder="your@email.com" />
-            </div>
-            <div class="form-group">
-              <label data-i18n="label_service">Service</label>
-              <select required>
-                <option value="" disabled selected data-i18n="select_service">Select a service</option>
-                <option data-i18n="service1_title">Massage Therapy</option>
-                <option data-i18n="service2_title">Doctor Consultation</option>
-                <option data-i18n="service3_title">Nutrition Support</option>
-                <option data-i18n="service4_title">Wellness Program</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label data-i18n="label_date">Preferred Date</label>
-              <input type="date" required />
-            </div>
-            <div class="form-group">
-              <label data-i18n="label_notes">Additional Notes (optional)</label>
-              <textarea data-i18n="placeholder_notes" placeholder="Tell us anything helpful about your needs..."></textarea>
-            </div>
-            <button type="submit" class="btn-form">
-              <i class="fas fa-calendar-check"></i>
-              <span data-i18n="btn_request_appointment">Request Appointment</span>
-            </button>
-          </form>
+          <figure class="consult-image-card">
+            <img src="assets/images/facility/facility-2.jpeg" alt="Isoko Life Center consultation and wellness space" />
+          </figure>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="consultation-focus">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="consult_focus_tag">Consultation Areas</span>
+          <h2 data-i18n="consult_focus_heading">Areas We Can Discuss With You</h2>
+          <p data-i18n="consult_focus_intro">Consultations are designed to guide, support, and help clients understand options rather than promise medical outcomes.</p>
+        </div>
+        <div class="consult-focus-grid">
+          <div class="consult-focus-card">
+            <i class="fas fa-person-walking"></i>
+            <h3 data-i18n="consult_focus1_title">Back and Nerve Wellness Concerns</h3>
+            <p data-i18n="consult_focus1_text">Guidance for common back, nerve, and body comfort concerns, including possible bodywork support.</p>
+          </div>
+          <div class="consult-focus-card">
+            <i class="fas fa-hand-sparkles"></i>
+            <h3 data-i18n="consult_focus2_title">Skin Wellness Concerns</h3>
+            <p data-i18n="consult_focus2_text">Cautious natural-care guidance and support options for skin wellness concerns.</p>
+          </div>
+          <div class="consult-focus-card">
+            <i class="fas fa-seedling"></i>
+            <h3 data-i18n="consult_focus3_title">Reproductive Health Support</h3>
+            <p data-i18n="consult_focus3_text">Respectful wellness guidance with referral to qualified care when a concern needs specialist input.</p>
+          </div>
+          <div class="consult-focus-card">
+            <i class="fas fa-apple-alt"></i>
+            <h3 data-i18n="consult_focus4_title">Nutrition and Lifestyle Guidance</h3>
+            <p data-i18n="consult_focus4_text">Practical support around food choices, sport, movement, stress, and daily habits.</p>
+          </div>
+          <div class="consult-focus-card">
+            <i class="fas fa-spa"></i>
+            <h3 data-i18n="consult_focus5_title">Massage and Reflexology Guidance</h3>
+            <p data-i18n="consult_focus5_text">Recommendations for bodywork support that may help relaxation, mobility, and general wellbeing.</p>
+          </div>
+          <div class="consult-focus-card">
+            <i class="fas fa-heart"></i>
+            <h3 data-i18n="consult_focus6_title">Counseling and Trauma-Healing Support</h3>
+            <p data-i18n="consult_focus6_text">Supportive conversation and guidance for emotional wellbeing, with referral when appropriate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="consultation-booking">
+      <div class="container">
+        <div class="booking-inner">
+          <div class="booking-info">
+            <span class="section-tag" data-i18n="booking_tag">Book Consultation</span>
+            <h2 data-i18n="booking_title">Start With a Clear Conversation</h2>
+            <p data-i18n="booking_desc">Share what you are experiencing and our team will contact you to arrange a suitable consultation time.</p>
+            <div class="booking-steps">
+              <div class="booking-step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <h4 data-i18n="step1_title">Share your concern</h4>
+                  <p data-i18n="step1_desc">Tell us what kind of wellness support or guidance you are looking for.</p>
+                </div>
+              </div>
+              <div class="booking-step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <h4 data-i18n="step2_title">Speak with the Isoko team</h4>
+                  <p data-i18n="step2_desc">We listen, ask helpful questions, and discuss suitable next steps.</p>
+                </div>
+              </div>
+              <div class="booking-step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <h4 data-i18n="step3_title">Receive guidance or referral</h4>
+                  <p data-i18n="step3_desc">You may receive wellness guidance, support recommendations, or referral direction.</p>
+                </div>
+              </div>
+              <div class="booking-step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                  <h4 data-i18n="step4_title">Follow a support plan where appropriate</h4>
+                  <p data-i18n="step4_desc">If suitable, the team may suggest a practical wellness support plan to follow.</p>
+                </div>
+              </div>
+            </div>
+            <div class="call-box">
+              <p><i class="fas fa-phone"></i> <span data-i18n="call_prompt">Prefer to call?</span> <strong><a href="tel:+250788333339">+250 788 333 339</a></strong></p>
+              <p><i class="fas fa-envelope"></i> <span data-i18n="email_prompt">Email us at</span> <strong><a href="mailto:info@isokolifecenter.com">info@isokolifecenter.com</a></strong></p>
+            </div>
+          </div>
+
+          <div class="booking-form">
+            <h3 data-i18n="form_book_title">Request a Consultation</h3>
+            <form onsubmit="handleBooking(event)">
+              <div class="form-group">
+                <label for="full-name" data-i18n="label_fullname">Full Name</label>
+                <input id="full-name" type="text" data-i18n="placeholder_fullname" placeholder="Your full name" required />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone" data-i18n="label_phone">Phone Number</label>
+                  <input id="phone" type="tel" placeholder="+250 7XX XXX XXX" required />
+                </div>
+                <div class="form-group">
+                  <label for="email" data-i18n="label_email">Email Address</label>
+                  <input id="email" type="email" data-i18n="placeholder_email" placeholder="your@email.com" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="area" data-i18n="label_consult_area">Preferred Consultation Area</label>
+                <select id="area" required>
+                  <option value="" disabled selected data-i18n="select_consult_area">Select a consultation area</option>
+                  <option data-i18n="consult_area_general">General wellness guidance</option>
+                  <option data-i18n="consult_area_herbal">Herbal wellness support</option>
+                  <option data-i18n="consult_area_massage">Massage / reflexology</option>
+                  <option data-i18n="consult_area_nutrition">Nutrition and lifestyle guidance</option>
+                  <option data-i18n="consult_area_counseling">Counseling support</option>
+                  <option data-i18n="consult_area_skin">Skin wellness support</option>
+                  <option data-i18n="consult_area_back">Back and nerve wellness support</option>
+                  <option data-i18n="consult_area_reproductive">Reproductive health support</option>
+                  <option data-i18n="consult_area_referral">Referral guidance</option>
+                  <option data-i18n="consult_area_other">Other</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="date" data-i18n="label_date">Preferred Date</label>
+                  <input id="date" type="date" required />
+                </div>
+                <div class="form-group">
+                  <label for="time" data-i18n="label_time">Preferred Time</label>
+                  <input id="time" type="time" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message" data-i18n="label_concern">Message / Concern</label>
+                <textarea id="message" placeholder="Briefly tell us what you would like help with..."></textarea>
+              </div>
+              <p class="form-safety" data-i18n="form_safety_note">This static form does not send to a server yet. For urgent or severe symptoms, please contact qualified medical care directly.</p>
+              <button type="submit" class="btn-form">
+                <i class="fas fa-calendar-check"></i>
+                <span data-i18n="btn_request_appointment">Request Consultation</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <div id="footer-placeholder"></div>
 
- <script src="js/translations.js"></script>
-<script src="js/components.js"></script>
-<script src="js/main.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
   <script>
     function handleBooking(e) {
       e.preventDefault();
       const lang = localStorage.getItem('isoko_lang') || 'en';
-      const m = {
-        en: 'Thank you! Your appointment request has been received. We will contact you within 24 hours.',
-        fr: 'Merci ! Votre demande de rendez-vous a été reçue. Nous vous contacterons dans les 24 heures.',
-        rw: 'Murakoze! Icyifuzo cyanyu cyakiriwe. Tuzabatumanahon zisurira mu masaha 24.'
-      };
-      alert(m[lang] || m.en);
+      const message = translations[lang]?.booking_success_message || translations.en.booking_success_message;
+      alert(message);
       e.target.reset();
     }
   </script>

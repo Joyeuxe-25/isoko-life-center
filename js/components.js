@@ -1,6 +1,26 @@
 // components.js — shared header and footer for all pages
 
 (function () {
+  const ISOKO_CONTACTS = Object.freeze({
+    businessName: 'Isoko Life Center',
+    legalName: 'Isoko Life Center Ltd',
+    email: 'info@isokolifecenter.com',
+    phoneDisplay: '+250 788 333 339',
+    phoneTel: '+250788333339',
+    whatsappNumber: '250788333339',
+    get mailto() {
+      return `mailto:${this.email}`;
+    },
+    get tel() {
+      return `tel:${this.phoneTel}`;
+    },
+    get whatsappUrl() {
+      return `https://wa.me/${this.whatsappNumber}`;
+    },
+  });
+
+  window.ISOKO_CONTACTS = ISOKO_CONTACTS;
+
   // ─── HEADER ────────────────────────────────────────────────────────────────
   const headerHTML = `
   <div class="topbar">
@@ -14,16 +34,17 @@
   <nav class="navbar" id="home">
     <div class="container">
       <a href="index.html" class="logo">
-        <div class="logo-mark">IL</div>
+        <img src="assets/images/logo/logo.jpeg" alt="Isoko Life Center logo" class="logo-img" />
         <div class="logo-text">
-          <span class="logo-name">Isoko Life</span>
-          <span class="logo-sub">Center Ltd</span>
+          <span class="logo-name">Isoko Life Center</span>
+          <span class="logo-sub">Wellness Center</span>
         </div>
       </a>
 
       <ul class="nav-links">
         <li><a href="index.html" data-i18n="nav_home">Home</a></li>
         <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+        <li><a href="services.html" data-i18n="nav_services">Services</a></li>
         <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
         <li><a href="consultation.html" data-i18n="nav_consultation">Consultation</a></li>
         <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
@@ -41,10 +62,10 @@
   <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <a href="index.html" class="sidebar-logo">
-        <div class="logo-mark">IL</div>
+        <img src="assets/images/logo/logo.jpeg" alt="Isoko Life Center logo" class="logo-img" />
         <div class="logo-text">
-          <span class="logo-name">Isoko Life</span>
-          <span class="logo-sub">Center Ltd</span>
+          <span class="logo-name">Isoko Life Center</span>
+          <span class="logo-sub">Wellness Center</span>
         </div>
       </a>
       <button class="sidebar-close" id="sidebar-close">&#x2715;</button>
@@ -55,6 +76,9 @@
       </a>
       <a href="products.html" class="sidebar-link" data-i18n="nav_products">
         <i class="fas fa-box-open"></i><span>Products</span>
+      </a>
+      <a href="services.html" class="sidebar-link" data-i18n="nav_services">
+        <i class="fas fa-spa"></i><span>Services</span>
       </a>
       <a href="about.html" class="sidebar-link" data-i18n="nav_about">
         <i class="fas fa-info-circle"></i><span>About Us</span>
@@ -70,7 +94,7 @@
       </a>
     </nav>
     <div class="sidebar-footer">
-      <a href="https://wa.me/250788333339" target="_blank" class="sidebar-whatsapp">
+      <a href="${ISOKO_CONTACTS.whatsappUrl}" target="_blank" rel="noopener" class="sidebar-whatsapp">
         <i class="fab fa-whatsapp"></i><span>Chat on WhatsApp</span>
       </a>
     </div>
@@ -85,14 +109,14 @@
 
         <div class="footer-brand">
           <div class="footer-logo">
-            <div class="footer-logo-mark">IL</div>
+            <img src="assets/images/logo/logo.jpeg" alt="Isoko Life Center logo" class="footer-logo-img" />
             <div>
-              <span class="footer-logo-name">Isoko Life</span>
-              <span class="footer-logo-sub">Center Ltd</span>
+              <span class="footer-logo-name">Isoko Life Center</span>
+              <span class="footer-logo-sub">Wellness Center</span>
             </div>
           </div>
           <p class="footer-about" data-i18n="footer_description">
-            Trusted wellness and beauty products for Rwanda — backed by certified health professionals.
+            Trusted wellness guidance, natural care support, and quality wellness products in Kigali.
           </p>
         </div>
 
@@ -101,6 +125,7 @@
           <ul>
             <li><a href="index.html" data-i18n="nav_home">Home</a></li>
             <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+            <li><a href="services.html" data-i18n="nav_services">Services</a></li>
             <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
             <li><a href="consultation.html" data-i18n="nav_consultation">Consultation</a></li>
             <li><a href="partner.html" data-i18n="nav_partner">Partner With Us</a></li>
@@ -111,9 +136,9 @@
         <div class="footer-col">
           <h5 data-i18n="footer_contact">Contact Us</h5>
           <ul class="contact-list">
-            <li><i class="fas fa-map-marker-alt"></i><span>Remera Kanombe Kucyamitsingi KN5Road, Kigali, Rwanda</span></li>
-            <li><i class="fas fa-phone"></i><span><a href="tel:+250788333339" style="color:inherit;">+250 788 333 339</a></span></li>
-            <li><i class="fas fa-envelope"></i><span><a href="mailto:info@isokolifecenter.com" style="color:inherit;">info@isokolifecenter.com</a></span></li>
+            <li><i class="fas fa-map-marker-alt"></i><span>Cya Mutzig area, Remera / Kanombe Sector, Kigali, Rwanda</span></li>
+            <li><i class="fas fa-phone"></i><span><a href="${ISOKO_CONTACTS.tel}" style="color:inherit;">${ISOKO_CONTACTS.phoneDisplay}</a></span></li>
+            <li><i class="fas fa-envelope"></i><span><a href="${ISOKO_CONTACTS.mailto}" style="color:inherit;">${ISOKO_CONTACTS.email}</a></span></li>
           </ul>
         </div>
 
@@ -131,8 +156,9 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; <span id="footer-year"></span> Isoko Life Center Ltd. <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <p>&copy; <span id="footer-year"></span> ${ISOKO_CONTACTS.legalName}. <span data-i18n="footer_rights">All rights reserved.</span></p>
         <div class="footer-legal">
+          <a href="employee-login.html" data-i18n="nav_employee_login">Employee Login</a>
           <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
           <a href="#" data-i18n="footer_terms">Terms of Service</a>
           <a href="#" data-i18n="footer_cookies">Cookie Policy</a>

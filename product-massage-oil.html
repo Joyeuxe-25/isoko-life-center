@@ -11,52 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/sections.css" />
-  <link rel="icon" type="image/svg+xml" href="/isoko-life-center/favicon.svg" />
-  <style>
-    .product-detail { padding: 60px 0 90px; background: var(--white); }
-    .product-detail-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-    .product-visual { position: relative; }
-    .product-big-img { height: 420px; background: linear-gradient(145deg, #7A9AAA, #4A6A7A); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 6rem; color: rgba(255,255,255,0.85); }
-    .product-badge-large { position: absolute; top: 20px; left: 20px; background: var(--green-light); color: var(--white); padding: 6px 16px; border-radius: 3px; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; }
-    .product-thumbs { display: flex; gap: 10px; margin-top: 14px; }
-    .product-thumb { width: 72px; height: 72px; background: linear-gradient(145deg, #7A9AAA, #4A6A7A); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: rgba(255,255,255,0.8); cursor: pointer; border: 2px solid transparent; transition: var(--transition); opacity: 0.6; }
-    .product-thumb.active { border-color: var(--green); opacity: 1; }
-    .product-info h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
-    .product-cat-tag { display: inline-block; background: var(--green-wash); color: var(--green); border: 1px solid var(--green-pale); padding: 4px 14px; border-radius: 40px; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; }
-    .product-rating-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
-    .product-rating-row .rating { color: var(--gold); font-size: 0.9rem; display: flex; align-items: center; gap: 3px; }
-    .product-rating-row span { font-size: 0.85rem; color: var(--ink-soft); }
-    .product-price-row { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; }
-    .product-price-big { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--ink); }
-    .product-desc { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 2rem; }
-    .product-highlights { margin-bottom: 2rem; }
-    .product-highlights h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 1rem; font-weight: 500; }
-    .highlight-item { display: flex; align-items: center; gap: 10px; margin-bottom: 0.7rem; font-size: 0.88rem; color: var(--ink-mid); }
-    .highlight-item i { color: var(--green); font-size: 0.85rem; width: 16px; }
-    .btn-enquire-large { width: 100%; background: var(--green); color: var(--white); border: none; padding: 15px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.07em; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.28s ease; margin-bottom: 12px; }
-    .btn-enquire-large:hover { background: var(--green-mid); transform: translateY(-1px); }
-    .btn-enquire-large.showing-whatsapp { background: #25D366; }
-    .btn-enquire-large.showing-whatsapp:hover { background: #1eab52; }
-    .btn-consult-link { width: 100%; background: transparent; color: var(--green); border: 1px solid var(--green); padding: 13px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.88rem; letter-spacing: 0.06em; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: var(--transition); }
-    .btn-consult-link:hover { background: var(--green-wash); }
-    .product-tabs { margin-top: 4rem; border-top: 1px solid var(--cream-dark); padding-top: 3rem; }
-    .tab-nav { display: flex; gap: 0; margin-bottom: 2rem; border-bottom: 1px solid var(--cream-dark); }
-    .tab-btn { padding: 10px 24px; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); transition: var(--transition); margin-bottom: -1px; }
-    .tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-    .tab-panel p { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1rem; }
-    .tab-panel ul { list-style: none; padding: 0; }
-    .tab-panel ul li { font-size: 0.92rem; color: var(--ink-soft); padding: 8px 0; border-bottom: 1px solid var(--cream-dark); display: flex; gap: 10px; }
-    .tab-panel ul li i { color: var(--green); margin-top: 2px; flex-shrink: 0; }
-    .related-section { padding: 60px 0 90px; background: var(--cream); }
-    .breadcrumb { padding: 16px 0; }
-    .breadcrumb a { color: var(--ink-soft); text-decoration: none; font-size: 0.82rem; }
-    .breadcrumb a:hover { color: var(--green); }
-    .breadcrumb span { color: var(--ink-soft); font-size: 0.82rem; margin: 0 8px; }
-    .breadcrumb strong { font-size: 0.82rem; color: var(--ink-mid); font-weight: 400; }
-    @media (max-width: 860px) { .product-detail-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
-  </style>
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -71,13 +26,10 @@
     <div class="container">
       <div class="product-detail-inner">
         <div class="product-visual">
-          <div class="product-big-img"><i class="fas fa-hands"></i></div>
-          <span class="product-badge-large" data-i18n="product4_badge">Popular</span>
-          <div class="product-thumbs">
-            <div class="product-thumb active"><i class="fas fa-hands"></i></div>
-            <div class="product-thumb"><i class="fas fa-leaf"></i></div>
-            <div class="product-thumb"><i class="fas fa-spa"></i></div>
+          <div class="product-big-img product-img-photo">
+            <img src="assets/images/products/product-massage-oil.png" alt="Massage oil and spa-care product visual" />
           </div>
+          <span class="product-badge-large" data-i18n="product4_badge">Popular</span>
         </div>
         <div class="product-info">
           <span class="product-cat-tag" data-i18n="product4_cat">Wellness</span>
@@ -86,23 +38,25 @@
             <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
             <span>4.7 <span data-i18n="product_rating">rating</span></span>
           </div>
-          <div class="product-price-row">
-            <span class="product-price-big price" data-i18n="product4_price">RWF 33,000</span>
-          </div>
-          <p class="product-desc" data-i18n="product4_detail_desc">Wellness Massage Oil is a therapeutic blend of natural oils carefully formulated to relax muscles, relieve tension, and nourish the skin.</p>
+          <p class="product-guidance-note" data-i18n="product_detail_availability_note">Contact Isoko Life Center for availability and guidance.</p>
+          <p class="product-desc" data-i18n="product4_detail_desc">Wellness Massage Oil is a body-care oil for massage, relaxation routines, and general skin nourishment.</p>
           <div class="product-highlights">
             <h4 data-i18n="key_benefits">Key Benefits</h4>
-            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b1">Relieves muscle tension and soreness</span></div>
-            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b2">Deep skin nourishment and hydration</span></div>
-            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b3">Calming and relaxing aromatherapy</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b1">Supports massage and relaxation routines</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b2">Helps nourish and moisturize the skin</span></div>
+            <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b3">Gentle botanical body-care feel</span></div>
             <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b4">100% natural oil blend</span></div>
             <div class="highlight-item"><i class="fas fa-check"></i> <span data-i18n="product4_b5">Suitable for all body types</span></div>
+          </div>
+          <div class="product-disclaimer">
+            <i class="fas fa-circle-info"></i>
+            <p data-i18n="product_disclaimer">For wellness support only. Please seek professional medical advice for serious, urgent, or complex health concerns.</p>
           </div>
           <button class="btn-enquire-large" id="btn-enquire-main">
             <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span>
           </button>
           <a href="consultation.html" class="btn-consult-link">
-            <i class="fas fa-user-md"></i> <span data-i18n="btn_ask_professional">Ask a Health Professional</span>
+            <i class="fas fa-user-md"></i> <span data-i18n="btn_ask_professional">Ask Isoko for Guidance</span>
           </a>
         </div>
       </div>
@@ -113,7 +67,7 @@
           <button class="tab-btn" onclick="switchTab('usage', this)" data-i18n="tab_usage">How to Use</button>
         </div>
         <div class="tab-panel active" id="tab-details">
-          <p data-i18n="product4_details_p1">Wellness Massage Oil is a carefully crafted blend of therapeutic oils. Lightweight, absorbs well, and leaves no greasy residue.</p>
+          <p data-i18n="product4_details_p1">Wellness Massage Oil is a botanical body-care oil for massage and relaxation support. It is not medical care.</p>
           <ul>
             <li><i class="fas fa-info-circle"></i> <span data-i18n="product4_spec1">Form: Oil — 100ml bottle</span></li>
             <li><i class="fas fa-info-circle"></i> <span data-i18n="product4_spec2">Scent: Light herbal and floral</span></li>
@@ -122,7 +76,7 @@
           </ul>
         </div>
         <div class="tab-panel" id="tab-ingredients">
-          <p data-i18n="product4_ing_p">A blend of 100% natural plant oils with no artificial fragrances.</p>
+          <p data-i18n="product4_ing_p">A plant-oil blend for external body-care use. Ask for current product guidance if you have sensitive skin.</p>
           <ul>
             <li><i class="fas fa-leaf"></i> <span data-i18n="product4_ing1">Sweet almond oil</span></li>
             <li><i class="fas fa-leaf"></i> <span data-i18n="product4_ing2">Lavender essential oil</span></li>
@@ -147,34 +101,34 @@
       <div class="product-grid">
         <div class="product-card">
           <span class="product-badge badge-bestseller" data-i18n="product1_badge">Best Seller</span>
-          <div class="product-img product-img-1"><i class="fas fa-capsules"></i></div>
+          <div class="product-img product-img-photo"><img src="assets/images/products/product-supplements.png" alt="Supplement-style wellness product arrangement" /></div>
           <div class="product-body">
             <span class="product-cat" data-i18n="product1_cat">Supplement</span>
             <h3 data-i18n="product1_name">Immune Booster Pro</h3>
-            <p data-i18n="product1_desc">Advanced formula for immune system support</p>
-            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span></div><span class="price" data-i18n="product1_price">RWF 55,000</span></div>
+            <p data-i18n="product1_desc">Wellness supplement option for daily immune routine support</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span></div><span class="product-availability-note" data-i18n="product_availability_note">Contact us for availability</span></div>
             <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
         <div class="product-card">
           <span class="product-badge badge-new" data-i18n="product2_badge">New</span>
-          <div class="product-img product-img-2"><i class="fas fa-spa"></i></div>
+          <div class="product-img product-img-photo"><img src="assets/images/products/product-beauty-cream.png" alt="Botanical beauty cream product visual" /></div>
           <div class="product-body">
             <span class="product-cat" data-i18n="product2_cat">Cosmetic</span>
             <h3 data-i18n="product2_name">Herbal Glow Cream</h3>
-            <p data-i18n="product2_desc">Natural anti-aging facial cream</p>
-            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span></div><span class="price" data-i18n="product2_price">RWF 39,000</span></div>
+            <p data-i18n="product2_desc">Botanical skin-care cream for a natural care routine</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span></div><span class="product-availability-note" data-i18n="product_availability_note">Contact us for availability</span></div>
             <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
         <div class="product-card">
           <span class="product-badge badge-premium" data-i18n="product3_badge">Premium</span>
-          <div class="product-img product-img-3"><i class="fas fa-bolt"></i></div>
+          <div class="product-img product-img-photo"><img src="assets/images/products/product-herbal-care.png" alt="Herbal care product visual" /></div>
           <div class="product-body">
             <span class="product-cat" data-i18n="product3_cat">Supplement</span>
             <h3 data-i18n="product3_name">Energy Vitality Capsules</h3>
-            <p data-i18n="product3_desc">Sustained energy and vitality support</p>
-            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div><span class="price" data-i18n="product3_price">RWF 67,000</span></div>
+            <p data-i18n="product3_desc">Herbal wellness option for daily vitality routines</p>
+            <div class="product-meta"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div><span class="product-availability-note" data-i18n="product_availability_note">Contact us for availability</span></div>
             <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire_now">Enquire Now</span></button>
           </div>
         </div>
@@ -192,28 +146,6 @@
       document.getElementById('tab-' + id).classList.add('active');
       btn.classList.add('active');
     }
-    document.getElementById('btn-enquire-main').addEventListener('click', function () {
-      const btn = this;
-      if (btn.classList.contains('showing-whatsapp')) { window.open(btn.dataset.waUrl, '_blank'); return; }
-      const lang = localStorage.getItem('isoko_lang') || 'en';
-      const t = translations[lang] || translations.en;
-      const name = t.product4_name || 'Wellness Massage Oil';
-      const price = t.product4_price || 'RWF 33,000';
-      const messages = {
-        en: `Hello! I'm interested in *${name}* (${price}). Could you provide more details?`,
-        fr: `Bonjour! Je suis intéressé(e) par *${name}* (${price}). Pouvez-vous me donner plus de détails?`,
-        rw: `Muraho! Ndashaka kumenya byinshi kuri *${name}* (${price}). Mwambwira byinshi?`,
-      };
-      const waUrl = `https://wa.me/250788333339?text=${encodeURIComponent(messages[lang] || messages.en)}`;
-      btn.dataset.waUrl = waUrl;
-      btn.classList.add('showing-whatsapp');
-      btn.innerHTML = `<i class="fab fa-whatsapp"></i> <span>${t.btn_chat_whatsapp || 'Chat on WhatsApp'}</span>`;
-      setTimeout(() => {
-        btn.classList.remove('showing-whatsapp');
-        delete btn.dataset.waUrl;
-        btn.innerHTML = `<i class="fas fa-shopping-bag"></i> <span>${t.btn_enquire_now || 'Enquire Now'}</span>`;
-      }, 6000);
-    });
   </script>
 </body>
 </html>

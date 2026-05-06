@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products | Isoko Life Center</title>
-  <meta name="description" content="Shop premium supplements, herbal remedies, cosmetics and wellness products at Isoko Life Center." />
+  <meta name="description" content="Explore wellness, herbal, beauty, and body-care products that can support healthy routines alongside Isoko Life Center guidance." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -12,38 +12,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/sections.css" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <style>
-    .page-hero { background: linear-gradient(135deg, var(--green-wash) 0%, var(--cream) 100%); padding: 60px 0 48px; text-align: center; border-bottom: 1px solid var(--cream-dark); }
-    .page-hero h1 { font-size: 2.8rem; margin-bottom: 0.8rem; }
-    .page-hero p  { font-size: 1rem; color: var(--ink-soft); max-width: 520px; margin: 0 auto; }
-    .filter-bar { padding: 20px 0; background: var(--white); border-bottom: 1px solid var(--cream-dark); position: sticky; top: 37px; z-index: 50; }
-    .filter-bar .container { display: flex; gap: 10px; flex-wrap: wrap; }
-    .filter-btn { padding: 8px 20px; border-radius: 40px; border: 1px solid var(--cream-dark); background: var(--white); color: var(--ink-soft); font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.05em; cursor: pointer; transition: var(--transition); }
-    .filter-btn:hover { border-color: var(--green); color: var(--green); }
-    .filter-btn.active { background: var(--green); border-color: var(--green); color: var(--white); }
-    .products-page { padding: 60px 0 90px; background: var(--white); }
-    .page-cta { background: var(--green); padding: 60px 0; text-align: center; }
-    .page-cta h2 { color: var(--white); font-size: 2rem; margin-bottom: 0.8rem; }
-    .page-cta p  { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 1.8rem; }
-    .btn-white { background: var(--white); color: var(--green); padding: 13px 28px; border: none; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.07em; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; transition: var(--transition); }
-    .btn-white:hover { background: var(--cream); }
-    .product-card-actions { display: flex; flex-direction: column; gap: 8px; }
-    .btn-view { width: 100%; background: transparent; color: var(--green); border: 1px solid var(--green-pale); padding: 9px; border-radius: var(--radius); cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; transition: var(--transition); }
-    .btn-view:hover { background: var(--green-wash); border-color: var(--green); }
-    @media (max-width: 1060px) { .product-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 600px)  { .product-grid { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
 
   <div id="header-placeholder"></div>
 
-  <div class="page-hero">
+  <div class="products-page-hero">
     <div class="container">
       <span class="section-tag" data-i18n="products_tag">Our Products</span>
-      <h1 data-i18n="products_page_title">Wellness &amp; Beauty Products</h1>
-      <p data-i18n="products_page_subtitle">Premium supplements, herbal remedies, cosmetics and wellness products — trusted by hundreds of customers across Rwanda.</p>
+      <h1 data-i18n="products_page_title">Wellness Products &amp; Natural Care Essentials</h1>
+      <p data-i18n="products_page_subtitle">Explore selected wellness, herbal, beauty, and body-care products that can support healthy routines alongside professional guidance.</p>
     </div>
   </div>
 
@@ -58,18 +37,24 @@
 
   <section class="products-page">
     <div class="container">
+      <div class="product-safety-note">
+        <i class="fas fa-circle-info"></i>
+        <p data-i18n="products_safety_note">Products are shared for wellness support and lifestyle care. If you are unsure which product is suitable for you, contact Isoko Life Center for guidance. For urgent or serious health concerns, consult qualified medical providers.</p>
+      </div>
       <div class="product-grid">
 
         <div class="product-card" data-category="supplement">
           <span class="product-badge badge-bestseller" data-i18n="badge_bestseller">Best Seller</span>
-          <div class="product-img product-img-1"><i class="fas fa-capsules"></i></div>
+          <div class="product-img product-img-photo">
+            <img src="assets/images/products/product-supplements.png" alt="Supplement-style wellness product arrangement" />
+          </div>
           <div class="product-body">
             <span class="product-cat" data-i18n="category_supplement">Supplement</span>
             <h3 data-i18n="product1_name">Immune Booster Pro</h3>
-            <p data-i18n="product1_desc">Advanced formula for immune system support</p>
+            <p data-i18n="product1_desc">Wellness supplement option for daily immune routine support</p>
             <div class="product-meta">
               <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.8</span></div>
-              <span class="price">RWF 55,000</span>
+              <span class="product-availability-note" data-i18n="product_availability_note">Contact us for availability</span>
             </div>
             <div class="product-card-actions">
               <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire">Enquire Now</span></button>
@@ -80,14 +65,16 @@
 
         <div class="product-card" data-category="cosmetic">
           <span class="product-badge badge-new" data-i18n="badge_new">New</span>
-          <div class="product-img product-img-2"><i class="fas fa-spa"></i></div>
+          <div class="product-img product-img-photo">
+            <img src="assets/images/products/product-beauty-cream.png" alt="Botanical beauty cream product visual" />
+          </div>
           <div class="product-body">
             <span class="product-cat" data-i18n="category_cosmetic">Cosmetic</span>
             <h3 data-i18n="product2_name">Herbal Glow Cream</h3>
-            <p data-i18n="product2_desc">Natural anti-aging facial cream</p>
+            <p data-i18n="product2_desc">Botanical skin-care cream for a natural care routine</p>
             <div class="product-meta">
               <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>4.6</span></div>
-              <span class="price">RWF 39,000</span>
+              <span class="product-availability-note" data-i18n="product_availability_note">Contact us for availability</span>
             </div>
             <div class="product-card-actions">
               <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire">Enquire Now</span></button>
@@ -98,14 +85,16 @@
 
         <div class="product-card" data-category="supplement">
           <span class="product-badge badge-premium" data-i18n="badge_premium">Premium</span>
-          <div class="product-img product-img-3"><i class="fas fa-bolt"></i></div>
+          <div class="product-img product-img-photo">
+            <img src="assets/images/products/product-herbal-care.png" alt="Herbal care product visual" />
+          </div>
           <div class="product-body">
             <span class="product-cat" data-i18n="category_supplement">Supplement</span>
             <h3 data-i18n="product3_name">Energy Vitality Capsules</h3>
-            <p data-i18n="product3_desc">Sustained energy and vitality support</p>
+            <p data-i18n="product3_desc">Herbal wellness option for daily vitality routines</p>
             <div class="product-meta">
               <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>4.9</span></div>
-              <span class="price">RWF 67,000</span>
+              <span class="product-availability-note" data-i18n="product_availability_note">Contact us for availability</span>
             </div>
             <div class="product-card-actions">
               <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire">Enquire Now</span></button>
@@ -116,14 +105,16 @@
 
         <div class="product-card" data-category="wellness">
           <span class="product-badge badge-popular" data-i18n="badge_popular">Popular</span>
-          <div class="product-img product-img-4"><i class="fas fa-hands"></i></div>
+          <div class="product-img product-img-photo">
+            <img src="assets/images/products/product-massage-oil.png" alt="Massage oil and spa-care product visual" />
+          </div>
           <div class="product-body">
             <span class="product-cat" data-i18n="category_wellness">Wellness</span>
             <h3 data-i18n="product4_name">Wellness Massage Oil</h3>
-            <p data-i18n="product4_desc">Therapeutic massage oil blend</p>
+            <p data-i18n="product4_desc">Body-care oil for massage and relaxation routines</p>
             <div class="product-meta">
               <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>4.7</span></div>
-              <span class="price">RWF 33,000</span>
+              <span class="product-availability-note" data-i18n="product_availability_note">Contact us for availability</span>
             </div>
             <div class="product-card-actions">
               <button class="btn-enquire"><i class="fas fa-shopping-bag"></i> <span data-i18n="btn_enquire">Enquire Now</span></button>
@@ -139,10 +130,10 @@
   <section class="page-cta">
     <div class="container">
       <h2 data-i18n="products_cta_heading">Need Help Choosing?</h2>
-      <p data-i18n="products_cta_text2">Our certified health professionals can guide you to the right products for your needs.</p>
+      <p data-i18n="products_cta_text2">Ask Isoko Life Center for guidance before choosing products, especially if you have health concerns or use medication.</p>
       <a href="consultation.html" class="btn-white">
         <i class="fas fa-user-md"></i>
-        <span data-i18n="products_cta_btn2">Book a Free Consultation</span>
+        <span data-i18n="products_cta_btn2">Book a Consultation</span>
       </a>
     </div>
   </section>
